@@ -1,73 +1,38 @@
 import * as React from 'react';
-
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
+import HeroSection from '@/components/layout/HeroSection';
+import PostCard from '@/components/cards/PostCard';
+import useSWR from 'swr'
+import axios from "axios";
 
 export default function HomePage() {
+  const url = `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=6&include=tags,authors`;
+  const fetcher = async () => await axios.get(url).then((res) => res.data);
+  const { data, error } = useSWR(url, fetcher);
+  const { posts = [] } = data || {}
+
+  if (error) <p>Loading failed...</p>;
+  if (!data) <h1>Loading...</h1>;
+
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
-
       <main>
-        <section className='bg-white'>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
-
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink>
-
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
-
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
-          </div>
-        </section>
+        <div className="container mx-auto">
+          <HeroSection />
+          <section className="articles-area pt-20 xl:pt-28 ">
+            <div className="section-title text-center max-w-xl mx-auto mb-6 lg:mb-16">
+              <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Blog HanaCare</h4>
+              <p className="text-lg text-gray-600 font-normal">Khám phá các bài viết về những thông tin bổ ích đến sức khoẻ và các thói quen lành mạnh hàng ngày</p>
+            </div>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 posts'>
+              {
+                posts.map((post: any, index: number) => <PostCard key={index} post={post} />)
+              }
+            </div>
+          </section>
+        </div>
       </main>
     </Layout>
   );

@@ -1,16 +1,24 @@
 import { AppProps } from 'next/app';
-
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
-
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
+import '@/styles/common.css';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import AppearingOnScroll from '@/components/AppearingOnScroll';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+
+  return (
+    <>
+      <Header />
+      <div id="anchor-header" />
+      <AppearingOnScroll anchor='anchor-header'>
+        {(isShow: any) => <Header className={`${isShow ? "mt-0" : '-mt-100'} header-sticky`} />}
+      </AppearingOnScroll>
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  )
 }
 
 export default MyApp;
