@@ -1,3 +1,4 @@
+import NextImage from '@/components/NextImage';
 import Link from 'next/link';
 import React from 'react';
 
@@ -39,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className="flex items-center relative">
           <div className="header-logo flex-auto lg:flex-none">
             <Link className="pr-8 inline-block" href="/">
-              <img className="max-h-16" src="/images/logo-hanacare.png" alt="HanaCare Logo" />
+              <NextImage layout='fill' className="max-h-16" src="/images/logo-hanacare.png" alt="HanaCare Logo" />
             </Link>
           </div>
           <div className="bg-white lg:flex flex-1 items-center shadow-xl lg:shadow-none">
