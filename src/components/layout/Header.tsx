@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Logo from '~/images/logo-hanacare.png'
 
 type HeaderProps = {
   className?: string
@@ -39,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className="flex items-center relative">
           <div className="header-logo flex-auto lg:flex-none">
             <Link className="pr-8 inline-block" href="/">
-              <img className="max-h-16" src="/images/logo-hanacare.png" alt="HanaCare Logo" />
+              <Image className="max-h-16 w-auto" src={Logo} alt="HanaCare Logo" />
             </Link>
           </div>
           <div className="bg-white lg:flex flex-1 items-center shadow-xl lg:shadow-none">

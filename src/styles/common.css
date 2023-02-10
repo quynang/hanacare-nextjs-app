@@ -57,3 +57,7 @@
 .bg-pos-0 {
   background-position: 0 0
 }
+
+.dot-after::after {
+  content: " • ";
+}

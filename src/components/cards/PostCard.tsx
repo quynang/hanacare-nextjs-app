@@ -1,6 +1,4 @@
 
-import NextImage from '@/components/NextImage'
-
 type PostCardProps = {
   post: any
 }
@@ -10,8 +8,9 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const {
     title,
     feature_image,
-    authors,
-    excerpt
+    excerpt,
+    reading_time,
+    published_at
   } = post || {}
 
   return (
@@ -24,8 +23,17 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <h4 className="text-xl text-gray-800 hover:text-blue-600 font-bold duration-300">
           <a href="#">{title}</a>
         </h4>
-        <p className="text-base font-normal mb-6 text-gray-600 line-clamp-2">{excerpt}
+        <p className="text-base font-normal mb-4 text-gray-600 line-clamp-2">{excerpt}
         </p>
+        <div className="flex items-center my-2 text-gray-700">
+          <span className="text-xs text-gray-500 dot-after mr-1">{new Date(published_at).toLocaleDateString('vi-VN', {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          })}
+          </span>
+          <span className="mr-2 text-xs text-gray-500">{reading_time} min read</span>
+        </div>
         {/* <div className="author flex items-center">
           <img className="w-10 h-10 rounded-full object-cover" src="https://learn.gthememarket.com/content/images/2022/08/nature-plant-photography-sunlight-leaf-flower-796565-pxhere-1.png" alt="Jhon Doe" />
           <div className="course-content ml-2">
