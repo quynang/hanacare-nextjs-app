@@ -1,5 +1,3 @@
-import NextImage from "@/components/NextImage"
-
 const HeroSection = () => {
   return (
     <div className="hero-area relative overflow-hidden pt-20 ">
@@ -9,12 +7,12 @@ const HeroSection = () => {
             <h1 className="font-serif text-4xl lg:text-5xl xl:text-6xl text-gray-800 font-bold  mb-12 !leading-tight">Chào mừng đến với HanaCare Super App</h1>
             <h4 className="text-xl text-gray-600 font-normal mb-12">Với mục đích Mọi người đều khoẻ mạnh và hạnh phúc, chúng tôi sẽ luôn không ngừng phát triển các chương trình để hướng đến sức khoẻ của cộng đồng</h4>
             <div className="flex w-full justify-center md:justify-start fade-in">
-              <NextImage layout="fill" src="/svg/app-store.svg" className='h-12  text-cyan-200 pr-4' alt="" />
-              <NextImage layout="fill" src="/svg/play-store.svg" className='h-12' alt="" />
+              <img src="/svg/app-store.svg" className='h-12  text-cyan-200 pr-4' />
+              <img src="/svg/play-store.svg" className='h-12' />
             </div>
           </div>
           <div className="feature-image relative lg:col-span-5">
-            <NextImage layout="fill" className="w-full h-96 object-cover rounded-xl learn-cover-img" width="750" height="923" src="/images/hero-banner.jpg" alt="Ghost Learning Management System" />
+            <img className="w-full h-96 object-cover rounded-xl learn-cover-img" width="750" height="923" src="/images/hero-banner.jpg" alt="Ghost Learning Management System" />
           </div>
         </div>
       </div>
