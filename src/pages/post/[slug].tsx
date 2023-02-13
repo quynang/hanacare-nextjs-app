@@ -8,7 +8,7 @@ export default function PostDetail() {
   const url = `https://hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
 
-  const { data, error } = useSWR(url, fetcher)
+  const { data, error } = useSWR(slug ? url : null, fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return null
