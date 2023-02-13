@@ -8,20 +8,10 @@ export default function PostDetail() {
   const url = `https://hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
 
-  const { data, error } = useSWR(
-    slug ? slug : null,
-    fetcher,
-    {
-      suspense: true,
-      refreshInterval: 0,
-      revalidateOnFocus: false,
-      dedupe: (prev: any, next: any) => prev.url === next.url,
-      dependencies: [slug]
-    }
-  );
+  const { data, error } = useSWR(url, fetcher)
 
-  if (!data) return null;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Failed to load</div>
+  if (!data) return null
   const post = data.posts[0];
 
   return (
