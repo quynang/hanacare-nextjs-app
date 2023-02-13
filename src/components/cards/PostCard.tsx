@@ -10,7 +10,8 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     feature_image,
     excerpt,
     reading_time,
-    published_at
+    published_at,
+    slug
   } = post || {}
 
   return (
@@ -21,7 +22,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </div>
       <div className="course-content">
         <h4 className="text-xl text-gray-800 hover:text-blue-600 font-bold duration-300">
-          <a href="#">{title}</a>
+          <a href={`/post/${slug}`}>{title}</a>
         </h4>
         <p className="text-base font-normal mb-4 text-gray-600 line-clamp-2">{excerpt}
         </p>

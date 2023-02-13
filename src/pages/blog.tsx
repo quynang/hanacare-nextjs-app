@@ -7,7 +7,6 @@ import axios from "axios";
 import Image from 'next/image';
 import BlogBanner from '~/images/blog-hero-banner.webp'
 
-
 export default function BlogPage() {
   const url = `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
@@ -20,7 +19,7 @@ export default function BlogPage() {
 
   return (
     <Layout>
-      <Seo />
+      <Seo title='Hanacare Blog' />
       <main>
         <div className="hero-bg relative">
           <Image src={BlogBanner} className="w-full object-cover h-64 bg-white" alt="Hanacare Blog" />

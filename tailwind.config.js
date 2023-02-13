@@ -54,6 +54,16 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp')
+    require('@tailwindcss/line-clamp'),
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen xl': {
+            maxWidth: '1320px',
+          },
+        }
+      })
+    }
   ],
 };
