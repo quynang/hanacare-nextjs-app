@@ -8,7 +8,7 @@ import Image from 'next/image';
 import BlogBanner from '~/images/blog-hero-banner.webp'
 import useSWRInfinite from 'swr/infinite'
 
-function flatten(arr: any[]) {
+function flatten(arr: any[]): any[] {
   return arr.reduce(function (flat, toFlatten) {
     return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
   }, []);
