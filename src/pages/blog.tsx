@@ -6,16 +6,29 @@ import useSWR from 'swr'
 import axios from "axios";
 import Image from 'next/image';
 import BlogBanner from '~/images/blog-hero-banner.webp'
+import useSWRInfinite from 'swr/infinite'
+
+function flatten(arr: any[]) {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
+}
+
+const getKey = (pageIndex: number, previousPageData: any) => {
+  return `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors&page=${pageIndex + 1}`;
+}
 
 export default function BlogPage() {
-  const url = `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors`;
-  const fetcher = async () => await axios.get(url).then((res) => res.data);
-  const { data, error } = useSWR(url, fetcher);
-  const { posts = [] } = data || {}
-  const [topPost, leftPost, rightPost, ...rest] = posts
 
-  if (error) <p>Loading failed...</p>;
-  if (!data) <h1>Loading...</h1>;
+  const fetcher = async (key: string) => await axios.get(key).then((res) => res.data);
+  const { data, size, setSize, isValidating } = useSWRInfinite(getKey, fetcher)
+  if (!data) return null
+
+  const [firstBatch, ...restBatch] = data || []
+
+  const [topPost, leftPost, rightPost, ...restFirstBatch] = firstBatch.posts || []
+
+  const restPosts = [...restFirstBatch, ...flatten(restBatch.map(batch => batch.posts))]
 
   return (
     <Layout>
@@ -55,8 +68,13 @@ export default function BlogPage() {
             </div>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 posts'>
               {
-                rest.map((post: any, index: number) => <PostCard key={index} post={post} />)
+                restPosts.map((post: any, index: number) => <PostCard key={index} post={post} />)
               }
+            </div>
+            <div className="text-center">
+              <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="js-load-posts rainbow relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-400  rounded-full border border-blue-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
+                {isValidating ? 'Loading' : 'Load More'}
+              </button>
             </div>
           </section>
         </div>
