@@ -1,7 +1,7 @@
 import NextImage from "@/components/NextImage"
 import heroBanner from '~/images/hero-banner.jpg'
 import PlayStore from '~/svg/play-store.svg'
-import AppStore from '~/svg/play-store.svg'
+import AppStore from '~/svg/app-store.svg'
 
 const HeroSection = () => {
   return (
