@@ -19,6 +19,7 @@ export default function Topic() {
   const posts = flatten((data || []).map(batch => batch.posts))
 
   const tagName = posts[0].primary_tag.name;
+  const tagDescription = posts[0].primary_tag.description
 
   const lastBatch = data.at(-1)
   const next = lastBatch && lastBatch.meta.pagination.next
@@ -31,6 +32,7 @@ export default function Topic() {
           <div className="page-title-box">
             <div className="section-title max-w-4xl ">
               <h4 className="tag-name text-4xl lg:text-5xl text-gray-800 font-bold ">{tagName}</h4>
+              <p className="tag-description text-lg text-gray-600 !leading-normal font-normal pt-8">{tagDescription}</p>
             </div>
           </div>
         </div>
