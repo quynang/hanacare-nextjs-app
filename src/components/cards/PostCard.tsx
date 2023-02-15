@@ -11,7 +11,8 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     excerpt,
     reading_time,
     published_at,
-    slug
+    slug,
+    primary_tag
   } = post || {}
 
   return (
@@ -20,6 +21,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       <div className="feature-image mb-6 rounded-lg overflow-hidden relative">
         <img className="w-full h-72 object-cover group-hover:scale-105 duration-300  before:bg-blue-800" src={feature_image} alt="Data Project - Election Analysis Part" />
       </div>
+      <a href={`/topic/${primary_tag.slug}`} className="mr-2 inline-block px-6 py-2 text-xs font-medium border rounded-full hover:text-blue-600 group duration-300 mb-4 hover:border-blue-600">{primary_tag.name}</a>
       <div className="course-content">
         <h4 className="text-xl text-gray-800 hover:text-blue-600 font-bold duration-300">
           <a href={`/post/${slug}`}>{title}</a>

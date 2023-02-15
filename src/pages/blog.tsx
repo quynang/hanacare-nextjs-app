@@ -2,17 +2,12 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import PostCard from '@/components/cards/PostCard';
-import useSWR from 'swr'
 import axios from "axios";
 import Image from 'next/image';
 import BlogBanner from '~/images/blog-hero-banner.webp'
 import useSWRInfinite from 'swr/infinite'
+import { flatten } from '@/lib/helper';
 
-function flatten(arr: any[]): any[] {
-  return arr.reduce(function (flat, toFlatten) {
-    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
-  }, []);
-}
 
 const getKey = (pageIndex: number, previousPageData: any) => {
   return `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors&page=${pageIndex + 1}`;
@@ -20,7 +15,7 @@ const getKey = (pageIndex: number, previousPageData: any) => {
 
 export default function BlogPage() {
 
-  const fetcher = async (key: string) => await axios.get(key).then((res) => res.data);
+  const fetcher = async (url: string) => await axios.get(url).then((res) => res.data);
   const { data, size, setSize, isValidating } = useSWRInfinite(getKey, fetcher)
   if (!data) return null
 
@@ -72,7 +67,7 @@ export default function BlogPage() {
               }
             </div>
             <div className="text-center">
-              <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="js-load-posts rainbow relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-400  rounded-full border border-blue-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
+              <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-600  rounded-full border border-slate-100 bg-slate-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
                 {isValidating ? 'Loading' : 'Load More'}
               </button>
             </div>

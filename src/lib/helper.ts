@@ -21,9 +21,8 @@ export function openGraph({
     : undefined;
   const ogDesc = encodeURIComponent(description.trim());
 
-  return `https://og.<your-domain>/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
-    ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
-  }`;
+  return `https://og.<your-domain>/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
+    }`;
 }
 
 export function getFromLocalStorage(key: string): string | null {
@@ -38,4 +37,10 @@ export function getFromSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }
   return null;
+}
+
+export function flatten(arr: any[]): any[] {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
 }
