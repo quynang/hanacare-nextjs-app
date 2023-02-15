@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import useSWR from 'swr'
 import axios from "axios";
 import useSWRInfinite from 'swr/infinite'
 import PostCard from '@/components/cards/PostCard';
@@ -17,11 +16,13 @@ export default function Topic() {
 
   if (!data) return null
 
-  console.log(data)
-
   const posts = flatten((data || []).map(batch => batch.posts))
 
   const tagName = posts[0].primary_tag.name;
+
+  const lastBatch = data.at(-1)
+  const next = lastBatch && lastBatch.meta.pagination.next
+
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function Topic() {
         <div className="container mx-auto">
           <div className="page-title-box">
             <div className="section-title max-w-4xl ">
-              <h4 className="tag-name font-serif text-4xl lg:text-5xl text-gray-800 font-bold ">{tagName}</h4>
+              <h4 className="tag-name text-4xl lg:text-5xl text-gray-800 font-bold ">{tagName}</h4>
             </div>
           </div>
         </div>
@@ -40,13 +41,13 @@ export default function Topic() {
             posts.map((post: any, index: number) => <PostCard key={index} post={post} />)
           }
         </div>
-        <div className="text-center">
-          <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-600  rounded-full border border-slate-100 bg-slate-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
-            {isValidating ? 'Loading' : 'Load More'}
-          </button>
-        </div>
+        {next &&
+          <div className="text-center">
+            <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-600  rounded-full border border-slate-100 bg-slate-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
+              {isValidating ? 'Loading' : 'Load More'}
+            </button>
+          </div>}
       </div>
     </>
-
   )
 }

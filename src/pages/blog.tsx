@@ -9,7 +9,7 @@ import useSWRInfinite from 'swr/infinite'
 import { flatten } from '@/lib/helper';
 
 
-const getKey = (pageIndex: number, previousPageData: any) => {
+const getKey = (pageIndex: number) => {
   return `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors&page=${pageIndex + 1}`;
 }
 
@@ -22,6 +22,9 @@ export default function BlogPage() {
   const [firstBatch, ...restBatch] = data || []
 
   const [topPost, leftPost, rightPost, ...restFirstBatch] = firstBatch.posts || []
+
+  const lastBatch = data.at(-1)
+  const next = lastBatch && lastBatch.meta.pagination.next
 
   const restPosts = [...restFirstBatch, ...flatten(restBatch.map(batch => batch.posts))]
 
@@ -63,14 +66,16 @@ export default function BlogPage() {
             </div>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 posts'>
               {
-                restPosts.map((post: any, index: number) => <PostCard key={index} post={post} />)
+                (restPosts || []).map((post: any, index: number) => <PostCard key={index} post={post} />)
               }
             </div>
-            <div className="text-center">
-              <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-600  rounded-full border border-slate-100 bg-slate-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
-                {isValidating ? 'Loading' : 'Load More'}
-              </button>
-            </div>
+            {next &&
+              <div className="text-center">
+                <button disabled={isValidating} onClick={() => setSize(size + 1)} type="button" className="relative load-more-btn inline-flex items-center px-12 py-4 text-base font-medium text-gray-600  rounded-full border border-slate-100 bg-slate-100 hover:text-blue-500 hover:border-blue-800 duration-300 mt-14">
+                  {isValidating ? 'Loading' : 'Load More'}
+                </button>
+              </div>
+            }
           </section>
         </div>
       </main >
