@@ -13,10 +13,8 @@ const TopicCard: React.FC<TopicCardProps> = ({ title, image }) => {
       </div>
       <div className="topics-content">
         <h4 className="text-2xl text-gray-600 hover:text-blue-800 font-bold mb-2 duration-300">
-          <a href="/topic/illustration/" >{title}</a>
+          {title}
         </h4>
-        {/* <p className="text-base leading-relaxed text-gray-400 font-normal">{description}
-        </p> */}
       </div>
     </div>
   )
