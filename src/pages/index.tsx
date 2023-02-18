@@ -21,7 +21,7 @@ const sectionForYourEmployees = [
 ]
 
 export default function HomePage() {
-  const url = `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=6&include=tags,authors`;
+  const url = `https://ghost.hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=6&include=tags,authors`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(url, fetcher);
   const { posts = [] } = data || {}

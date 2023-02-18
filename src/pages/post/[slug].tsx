@@ -5,7 +5,7 @@ import axios from "axios";
 export default function PostDetail() {
   const router = useRouter()
   const { slug } = router.query
-  const url = `https://hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags`;
+  const url = `https://ghost.hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
 
   const { data, error } = useSWR(slug ? url : null, fetcher)

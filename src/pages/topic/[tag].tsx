@@ -5,7 +5,7 @@ import PostCard from '@/components/cards/PostCard';
 import { flatten } from '@/lib/helper';
 
 const getKey = (pageIndex: number, tag: any) => {
-  return `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&filter=tag:${tag}&include=tags&page=${pageIndex + 1}`;
+  return `https://ghost.hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&filter=tag:${tag}&include=tags&page=${pageIndex + 1}`;
 }
 
 export default function Topic() {

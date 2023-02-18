@@ -10,7 +10,7 @@ import { flatten } from '@/lib/helper';
 
 
 const getKey = (pageIndex: number) => {
-  return `https://hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors&page=${pageIndex + 1}`;
+  return `https://ghost.hanacare.vn/ghost/api/content/posts?key=942efd06374ce7156d0bf617c4&limit=15&include=tags,authors&page=${pageIndex + 1}`;
 }
 
 export default function BlogPage() {
