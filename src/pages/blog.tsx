@@ -43,7 +43,7 @@ export default function BlogPage() {
                 <img className="w-full h-96 rounded-lg object-cover before:bg-blue-800" src={topPost?.feature_image} />
               </div>
               <div>
-                <h4 className="font-serif text-base text-4xl lg:text-5xl text-gray-800 font-bold mb-6 hover:text-blue-600">
+                <h4 className="font-serif text-base lg:text-5xl text-gray-800 font-bold mb-6 hover:text-blue-600">
                   <a href="#">
                     {topPost?.title}
                   </a>

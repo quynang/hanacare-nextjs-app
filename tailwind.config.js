@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        primary: [fontFamily.sans],
       },
       colors: {
         primary: {
@@ -59,6 +59,8 @@ module.exports = {
       addComponents({
         '.container': {
           maxWidth: '100%',
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
           '@screen xl': {
             maxWidth: '1320px',
           },

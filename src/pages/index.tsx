@@ -10,7 +10,8 @@ import TopicCard from '@/components/cards/TopicCard';
 const sectionTopics = [
   { image: '/images/topic.svg', title: 'Luyện tập thói quen hàng ngày' },
   { image: '/images/topic.svg', title: 'Thử thách nâng cao sức khoẻ' },
-  { image: '/images/topic.svg', title: 'Chăm sóc sức khoẻ tiện lợi cùng Đối tác MiniApp' }
+  { image: '/images/topic.svg', title: 'Chăm sóc sức khoẻ tiện lợi cùng Đối tác MiniApp' },
+  { image: '/images/topic.svg', title: ' Đánh giá sức khoẻ ' }
 ]
 
 const sectionForYourEmployees = [
@@ -40,7 +41,7 @@ export default function HomePage() {
                 <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Trải nghiệm cùng HanaCare</h4>
                 <p className="text-lg text-gray-400 font-normal">Chúng tôi cung cấp nội dung sức khoẻ phù hợp vào đúng thời điểm</p>
               </div>
-              <div className="grid grid-cols-3 mb-8 gap-8">
+              <div className="grid sm:grid-col-2 md:grid-cols-3 lg:grid-cols-4 mb-8 gap-8">
                 {sectionTopics.map((item, index) => (
                   <TopicCard key={index} title={item.title} image={item.image} />
                 ))}
@@ -53,11 +54,11 @@ export default function HomePage() {
                 <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Dành cho nhân viên của bạn</h4>
                 <p className="text-lg text-gray-400 font-normal">Tạo điều kiện và cung cấp cho nhân viên của bạn cùng tham gia vào các chương trình, hoạt động nhằm nâng cao và hỗ trợ tất cả các nhu cầu về sức khỏe của họ</p>
               </div>
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {sectionForYourEmployees.map((item, index) => (
                   <div key={index} className="relative">
                     <img src={item.image} />
-                    <div className='absolute backdrop-blur m-2 p-4 bottom-0 left-0 w-full text-center text-xl text-gray-600 font-bold'>
+                    <div className='absolute rounded-md backdrop-blur m-2 p-4 bottom-0 left-0 w-full text-center text-xl text-gray-600 font-bold'>
                       {item.title}
                     </div>
                   </div>

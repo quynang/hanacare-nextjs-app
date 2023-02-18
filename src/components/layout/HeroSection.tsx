@@ -17,7 +17,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="feature-image relative lg:col-span-5">
-            <NextImage className="w-full h-96 object-cover rounded-xl learn-cover-img" width="750" height="923" src={heroBanner} alt="Ghost Learning Management System" />
+            <img className="w-full object-cover rounded-xl learn-cover-img" style={{ minHeight: 520 }} width="750" height="923" src='/images/hero-banner.jpg' alt="Ghost Learning Management System" />
           </div>
         </div>
       </div>
