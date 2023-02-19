@@ -33,9 +33,9 @@ export default function HomePage() {
             <div className="container mx-auto">
               <div className="section-title text-center max-w-xl mx-auto mb-6 lg:mb-16">
                 <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Trải nghiệm cùng HanaCare</h4>
-                <p className="text-lg text-gray-400 font-normal">Chúng tôi cung cấp nội dung sức khoẻ phù hợp vào đúng thời điểm</p>
+                <p className="text-lg text-gray-600 font-normal">Chúng tôi cung cấp nội dung sức khoẻ phù hợp vào đúng thời điểm</p>
               </div>
-              <div className="grid sm:grid-col-2 md:grid-cols-3 lg:grid-cols-4 mb-8 gap-8">
+              <div className="grid sm:grid-col-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {features.slice(0, 4).map((item, index) => (
                   <TopicCard key={index} title={item.title} image={item.image} />
                 ))}
@@ -46,13 +46,13 @@ export default function HomePage() {
             <div className="container mx-auto">
               <div className="section-title text-center max-w-xl mx-auto">
                 <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Dành cho nhân viên của bạn</h4>
-                <p className="text-lg text-gray-400 font-normal">Tạo điều kiện và cung cấp cho nhân viên của bạn cùng tham gia vào các chương trình, hoạt động nhằm nâng cao và hỗ trợ tất cả các nhu cầu về sức khỏe của họ</p>
+                <p className="text-lg text-gray-600 font-normal">Tạo điều kiện và cung cấp cho nhân viên của bạn cùng tham gia vào các chương trình, hoạt động nhằm nâng cao và hỗ trợ tất cả các nhu cầu về sức khỏe của họ</p>
               </div>
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="grid md:grid-cols-3 gap-4">
                 {sectionForYourEmployees.map((item, index) => (
                   <div key={index} className="flex flex-col justify-center relative p-10">
                     <img style={{ width: 'auto', maxHeight: 350, objectFit: 'contain' }} src={item.image} />
-                    <div className='mt-6 w-full text-center text-xl text-gray-600 font-bold'>
+                    <div className='mt-6 w-full text-center text-xl text-gray-800 font-bold'>
                       {item.title}
                     </div>
                   </div>

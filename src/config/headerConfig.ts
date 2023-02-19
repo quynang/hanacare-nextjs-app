@@ -16,7 +16,7 @@ export const menuItems = [
   //   href: '#'
   // },
   {
-    label: 'Doành cho doanh nghiệp',
+    label: 'Dành cho doanh nghiệp',
     href: 'danh-cho-doanh-nghiep'
   },
   {

@@ -2,15 +2,15 @@ import TopicCard from "@/components/cards/TopicCard"
 
 const contentBoxs = [
   {
-    icon: '/images/topic.svg',
+    icon: '/images/tam-nhin.png',
     title: 'Tầm nhìn: Mỗi người được sử dụng dịch vụ và sản phẩm CSSK tốt nhất để họ có cuộc sống hạnh phúc trọn vẹn'
   },
   {
-    icon: '/images/topic.svg',
+    icon: '/images/su-menh.png',
     title: 'Sứ mệnh: Cung cấp ứng dụng CSSK dành cho mọi người để giải quyết vấn đề một cách tiện lợi'
   },
   {
-    icon: '/images/topic.svg',
+    icon: '/images/gia-tri-cot-loi.png',
     title: 'Giá trị cốt lõi: Integrity - Gốc rễ vấn đề - Data driven - Khoẻ mạnh - Truyền cảm hứng'
   }
 ]
@@ -28,7 +28,7 @@ const HanacareSuperAppStory = () => {
             </div>
             <div className="lg:col-span-4">
               <div className="feature-image relative aos-init aos-animate" data-aos="fade" data-aos-delay="100">
-                <img className="rounded-xl w-full object-cover" style={{ maxHeight: 271 }} src="/images/hanacare-founder.jpg" alt="The century of climate migration" />
+                <div className="rounded-xl bg-left-top w-full bg-[url('/images/hanacare-founder.jpg')]" style={{ height: 272, backgroundSize: '100% 160%', backgroundPosition: '0px -50px' }} />
               </div>
             </div>
           </div>
@@ -37,16 +37,22 @@ const HanacareSuperAppStory = () => {
       <div className="single-are pb-20">
         <div className='gh-content gh-canvas pb-20 xl:pb-20 max-w-4xl mx-auto'>
           <p>
-            Đầu năm 2021, khi dịch bệnh Covid-19 đang xảy, Những hình ảnh về những đội ngũ y bác sĩ và những người tình nguyện viên hi sinh để chăm sóc cho người bệnh, từ chăm sóc sức khỏe cho người gặp khó khăn đến gọi điện trấn an cho người cách ly, tạo ra ý tưởng cho việc xây dựng một eco system về chăm sóc sức khỏe.
+            Vào giữa năm 2021, khi mà covid-19 đang hoành hành, đau thương mất mát xảy ra ở khắp nơi, khiến nhiều người hoang mang tuyệt vọng. Lúc đó hình ảnh các thiên thần áo trắng, chiến đấu quên bản thân chăm sóc cho mọi người đã cho tôi niềm tin vào tương lai, rằng dịch bệnh sẽ qua đi, mọi người sẽ lại có cuộc sống an yên.
           </p>
           <p>
-            Nơi có thể cung cấp những dịch vụ chăm sóc sức khỏe đa dạng, từ tư vấn sức khỏe đến chăm sóc theo địa điểm và đặt hẹn với bác sĩ, từ giảm cân và tập gym đến điều trị tâm lý và tăng cường sức khỏe tinh thần. Nó cũng hỗ trợ người dùng trong việc quản lý tài chính sức khỏe và giải quyết những vấn đề về bảo hiểm y tế.
+            Và cũng từ đó, ý tưởng về xây dựng app chăm sóc sức khỏe và hạnh phúc cho mọi người được hình thành. Tôi muốn xây dựng một ứng dụng như thiên thần áo trắng bên cạnh mọi người, cung cấp những dịch vụ chăm sóc sức khỏe đa dạng và tiện lợi.
           </p>
           <p>
-            Vì thế ngay khi hết giãn cách, tôi đã tập họp anh em trong team lại và chia sẽ ý tưởng của mình. Mọi người nhanh chóng đồng thuận và bắt tay vào thực hiện xây những viên gạch đầu tiên để xây dựng HanaCare.
+            Từ tư vấn sức khỏe đến chăm sóc bệnh nhân, đặt hẹn với bác sĩ. Từ giảm cân, tập gym đến điều trị tâm lý và tăng cường sức khỏe tinh thần. Từ bảo hiểm, quản lý tài chính đến việc kết nối cộng đồng. Giúp xây dựng một môi trường trong lành và phát triển bản thân.
           </p>
           <p>
-            Tên HanaCare được chọn vì Hana có nghĩa là hạnh phúc, bởi mục tiêu của chúng tôi là xây dựng một ứng dụng tiện lợi mang lại sức khỏe và hạnh phúc cho mọi người.
+            Tôi muốn ứng dụng này có thể giúp mọi người có một cuộc sống an yên trọn vẹn.
+          </p>
+          <p>
+            Sau khi ghi chép lại ý tưởng xong, tôi lập tức chia sẻ ý tưởng với các thành viên trong đội  Mọi người nhanh chóng đồng thuận vì mỗi thành viên, ai cũng đang ấp ủ xây dựng được một ứng dụng có thể đóng góp cho cộng đồng đặc biệt là về vấn đề sức khỏe. Chính vì thế, mà chúng tôi bắt tay vào sắp xếp những viên gạch đầu tiên để xây dựng ứng dụng ngay.
+          </p>
+          <p>
+            Hana có nghĩa là hạnh phúc cũng có nghĩa là hoa. Hoa tặng người mình yêu quý, hoa chữa lành vết thương người được tặng. Chúng tôi muốn xây dựng HanaCare thành một ứng dụng biết chăm sóc, chia sẻ, quan tâm mọi người và được mọi người yêu mến. Vậy nên chúng tôi đã đặt tên app là HanaCare, app chăm sóc sức khỏe và hạnh phúc cho mọi người.
           </p>
           <div className="flex justify-end">
             <p className="italic">Đạt Nguyễn - Founder</p>

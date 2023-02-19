@@ -10,7 +10,7 @@ const HanacareFeature = () => {
             <div className="lg:col-span-8">
               <div className="hero-content lg:flex flex-wrap text-left relative lg:pr-14">
                 <h1 className="w-full font-serif !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">Tính năng của Hanacare</h1>
-                <p className="text-md lg:text-lg text-gray-400 font-normal">HanaCare làm gì để hướng đến mục tiêu: "Mọi người đều khoẻ mạnh và hạnh phúc".</p>
+                <p className="text-md lg:text-lg text-gray-600 font-normal">HanaCare làm gì để hướng đến mục tiêu: "Mọi người đều khoẻ mạnh và hạnh phúc".</p>
               </div>
             </div>
             <div className="lg:col-span-4">

@@ -1,6 +1,6 @@
 const BlocksContent = [
   {
-    img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGNvZGV8ZW58MHx8fHwxNjYwMzc0MzMx&ixlib=rb-1.2.1&q=80&w=2000',
+    img: '/images/hanacare-story.jpg',
     slug: 'hanacare-super-app-story',
     title: 'Câu chuyện về HanaCare Super App',
     description: 'Câu chuyện được trải nghiệm bởi chính Nhà sáng lập và niềm tin từ những  đồng đội HanaCare'
