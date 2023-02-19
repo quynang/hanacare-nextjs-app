@@ -2,17 +2,17 @@ import TopicCard from "@/components/cards/TopicCard"
 
 const features = [
   {
-    icon: '/images/topic.svg',
+    icon: '/images/happiness-metric.png',
     title: 'Đánh giá chỉ số hạnh phúc',
     description: 'Giúp bạn tìm hiểu những nguồn năng lượng tích cực và tiêu cực trong cuộc sống, và tìm ra cách để tăng mức độ hạnh phúc.'
   },
   {
-    icon: '/images/topic.svg',
+    icon: '/images/group-activities.png',
     title: 'Tổ chức hoạt động đội nhóm',
     description: 'Tổ chức và quản lý các hoạt động đội nhóm một cách hiệu quả, ngoài việc cung cấp giải pháp sức khoẻ hoạt động còn giúp tối ưu hoá quy trình làm việc đội nhóm, tăng năng suất và giảm thời gian tốn kém.'
   },
   {
-    icon: '/images/topic.svg',
+    icon: '/images/enps-metric.png',
     title: 'Báo cáo chỉ số ENPS',
     description: 'ENPS là một chỉ số cực kỳ hữu ích cho các công ty để đánh giá mức độ hài lòng của nhân viên và tìm ra các cách cải thiện để giữ nhân viên và tạo ra môi trường làm việc tốt hơn.'
   }
