@@ -32,7 +32,7 @@ const ForEnterprise = () => {
             </div>
             <div className="lg:col-span-4">
               <div className="feature-image relative aos-init aos-animate" data-aos="fade" data-aos-delay="100">
-                <img className="rounded-xl w-full object-cover" style={{ maxHeight: 271 }} src={'https://learn.gthememarket.com/content/images/2022/09/online-education-1.jpg'} alt="The century of climate migration" />
+                <img className="rounded-xl w-full object-cover" style={{ maxHeight: 271 }} src="/images/company-collabration.jpg" alt="Dành cho doanh nghiệp" />
               </div>
             </div>
           </div>
