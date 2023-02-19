@@ -3,15 +3,18 @@ import TopicCard from "@/components/cards/TopicCard"
 const contentBoxs = [
   {
     icon: '/images/tam-nhin.png',
-    title: 'Tầm nhìn: Mỗi người được sử dụng dịch vụ và sản phẩm CSSK tốt nhất để họ có cuộc sống hạnh phúc trọn vẹn'
+    title: 'Tầm nhìn',
+    description: 'Mỗi người được sử dụng dịch vụ và sản phẩm CSSK tốt nhất để họ có cuộc sống hạnh phúc trọn vẹn'
   },
   {
     icon: '/images/su-menh.png',
-    title: 'Sứ mệnh: Cung cấp ứng dụng CSSK dành cho mọi người để giải quyết vấn đề một cách tiện lợi'
+    title: 'Sứ mệnh',
+    description: 'Cung cấp ứng dụng CSSK dành cho mọi người để giải quyết vấn đề một cách tiện lợi'
   },
   {
     icon: '/images/gia-tri-cot-loi.png',
-    title: 'Giá trị cốt lõi: Integrity - Gốc rễ vấn đề - Data driven - Khoẻ mạnh - Truyền cảm hứng'
+    title: 'Giá trị cốt lõi',
+    description: 'Integrity - Gốc rễ vấn đề - Data driven - Khoẻ mạnh - Truyền cảm hứng'
   }
 ]
 
@@ -62,7 +65,7 @@ const HanacareSuperAppStory = () => {
       <div className="container mx-auto">
         <div className="grid sm:grid-col-2 md:grid-cols-3 mb-8 gap-8">
           {contentBoxs.map((item, index) => (
-            <TopicCard key={index} title={item.title} image={item.icon} />
+            <TopicCard key={index} title={item.title} description={item.description} image={item.icon} />
           ))}
         </div>
       </div>
