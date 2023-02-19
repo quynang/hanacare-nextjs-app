@@ -38,10 +38,10 @@ export default function BlogPage() {
         </div>
         <div className="container mx-auto">
           <section className="articles-area pt-8">
-            <div className='md:hidden py-4'>
+            <div className='md:hidden mb-8'>
               <PostCard post={topPost} />
             </div>
-            <div className="hidden md:grid grid-cols-2 gap-8 mb-6 hover:border-white bg-white">
+            <div className="hidden md:grid grid-cols-2 gap-8 mb-8 hover:border-white bg-white">
               <div className='w-full relative'>
                 <img className="w-full h-96 rounded-lg object-cover before:bg-blue-800" src={topPost?.feature_image} />
               </div>
@@ -64,7 +64,7 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-8 posts sm:py-4 sm:mb-4">
+            <div className="grid sm:grid-cols-2 gap-8 mb-8">
               <PostCard post={leftPost} />
               <PostCard post={rightPost} />
             </div>
