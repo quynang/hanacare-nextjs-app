@@ -44,7 +44,7 @@ const AboutHanacare = () => {
             {
               BlocksContent.map((item: any, index: number) => {
                 return (
-                  <div className="course-box-1 h-full rounded-lg border
+                  <div key={index} className="course-box-1 h-full rounded-lg border
      hover:border-white  bg-white hover:shadow-lg hover:-translate-y-1 group p-6 duration-300">
                     <div className="feature-image mb-6 rounded-lg overflow-hidden relative">
                       <img className="w-full h-72 object-cover group-hover:scale-105 duration-300  before:bg-blue-800" src={item.img} alt="Data Project - Election Analysis Part" />
