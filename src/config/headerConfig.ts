@@ -5,7 +5,7 @@ export const menuItems = [
   },
   {
     label: 'Tính năng',
-    href: '#'
+    href: 'tinh-nang'
   },
   {
     label: 'Đối tác',
@@ -17,7 +17,7 @@ export const menuItems = [
   },
   {
     label: 'Doành cho doanh nghiệp',
-    href: '#'
+    href: 'danh-cho-doanh-nghiep'
   },
   {
     label: 'Blog HanaCare',

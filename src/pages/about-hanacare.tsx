@@ -1,7 +1,7 @@
 const BlocksContent = [
   {
     img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGNvZGV8ZW58MHx8fHwxNjYwMzc0MzMx&ixlib=rb-1.2.1&q=80&w=2000',
-    slug: '',
+    slug: 'hanacare-super-app-story',
     title: 'Câu chuyện về HanaCare Super App',
     description: 'Câu chuyện được trải nghiệm bởi chính Nhà sáng lập và niềm tin từ những  đồng đội HanaCare'
   },
@@ -51,7 +51,7 @@ const AboutHanacare = () => {
                     </div>
                     <div className="course-content">
                       <h4 className="text-xl text-gray-800 hover:text-blue-600 font-bold duration-300">
-                        <a href={`/post/${item.slug}`}>{item.title}</a>
+                        <a href={`/${item.slug}`}>{item.title}</a>
                       </h4>
                       <p className="text-base font-normal mb-4 text-gray-600 line-clamp-2">{item.description}
                       </p>

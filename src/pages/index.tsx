@@ -11,7 +11,7 @@ const sectionTopics = [
   { image: '/images/topic.svg', title: 'Luyện tập thói quen hàng ngày' },
   { image: '/images/topic.svg', title: 'Thử thách nâng cao sức khoẻ' },
   { image: '/images/topic.svg', title: 'Chăm sóc sức khoẻ tiện lợi cùng Đối tác MiniApp' },
-  { image: '/images/topic.svg', title: ' Đánh giá sức khoẻ ' }
+  { image: '/images/topic.svg', title: 'Đánh giá sức khoẻ' }
 ]
 
 const sectionForYourEmployees = [
