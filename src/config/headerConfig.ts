@@ -1,7 +1,7 @@
 export const menuItems = [
   {
     label: 'Về HanaCare',
-    href: '#'
+    href: 'about-hanacare'
   },
   {
     label: 'Tính năng',
