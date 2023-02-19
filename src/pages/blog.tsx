@@ -37,17 +37,21 @@ export default function BlogPage() {
           <span className="overlay-bg absolute left-0 right-0 bottom-0 top-0 bg-blue-800 opacity-10 group-hover:opacity-20  duration-100"></span>
         </div>
         <div className="container mx-auto">
-          <section className="articles-area pt-8 ">
-            <div className="grid grid-cols-2 gap-8 mb-6 hover:border-white bg-white">
+          <section className="articles-area pt-8">
+            <div className='md:hidden py-4'>
+              <PostCard post={topPost} />
+            </div>
+            <div className="hidden md:grid grid-cols-2 gap-8 mb-6 hover:border-white bg-white">
               <div className='w-full relative'>
                 <img className="w-full h-96 rounded-lg object-cover before:bg-blue-800" src={topPost?.feature_image} />
               </div>
               <div>
-                <h4 className="font-serif text-base lg:text-5xl text-gray-800 font-bold mb-6 hover:text-blue-600">
-                  <a href="#">
+                <h4 className="font-serif md:text-2xl lg:text-5xl text-gray-800 font-bold mb-6 hover:text-blue-600">
+                  <a href={`post/${topPost.slug}`}>
                     {topPost?.title}
                   </a>
                 </h4>
+                {topPost.primary_tag && <a href={`/topic/${topPost.primary_tag.slug}`} className="mr-2 inline-block px-6 py-2 text-xs font-medium border rounded-full hover:text-blue-600 group duration-300 mb-4 hover:border-blue-600">{topPost.primary_tag.name}</a>}
                 <div className="text-lg text-gray-600 mb-6 font-normal line-clamp-4">{topPost?.excerpt}</div>
                 <div className="flex items-center my-2 text-gray-700">
                   <span className="text-sm text-gray-500 dot-after mr-1">{new Date(topPost?.published_at).toLocaleDateString('vi-VN', {
@@ -60,7 +64,7 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 mb-8 gap-8">
+            <div className="grid sm:grid-cols-2 gap-8 posts sm:py-4 sm:mb-4">
               <PostCard post={leftPost} />
               <PostCard post={rightPost} />
             </div>
