@@ -6,18 +6,12 @@ import PostCard from '@/components/cards/PostCard';
 import useSWR from 'swr'
 import axios from "axios";
 import TopicCard from '@/components/cards/TopicCard';
-
-const sectionTopics = [
-  { image: '/images/topic.svg', title: 'Luyện tập thói quen hàng ngày' },
-  { image: '/images/topic.svg', title: 'Thử thách nâng cao sức khoẻ' },
-  { image: '/images/topic.svg', title: 'Chăm sóc sức khoẻ tiện lợi cùng Đối tác MiniApp' },
-  { image: '/images/topic.svg', title: 'Đánh giá sức khoẻ' }
-]
+import { features } from '@/config';
 
 const sectionForYourEmployees = [
-  { image: '/images/mobile-feature-1.jpg', title: 'Đánh giá chỉ số hạnh phúc' },
-  { image: '/images/mobile-feature-2.jpeg', title: 'Tổ chức hoạt động đội nhóm' },
-  { image: '/images/mobile-feature-3.jpeg', title: 'Báo cáo chỉ số ENPS' }
+  { image: '/images/mobile-feature-1.png', title: 'Đánh giá chỉ số hạnh phúc' },
+  { image: '/images/mobile-feature-2.png', title: 'Tổ chức hoạt động đội nhóm' },
+  { image: '/images/mobile-feature-3.png', title: 'Báo cáo chỉ số ENPS' }
 ]
 
 export default function HomePage() {
@@ -42,7 +36,7 @@ export default function HomePage() {
                 <p className="text-lg text-gray-400 font-normal">Chúng tôi cung cấp nội dung sức khoẻ phù hợp vào đúng thời điểm</p>
               </div>
               <div className="grid sm:grid-col-2 md:grid-cols-3 lg:grid-cols-4 mb-8 gap-8">
-                {sectionTopics.map((item, index) => (
+                {features.slice(0, 4).map((item, index) => (
                   <TopicCard key={index} title={item.title} image={item.image} />
                 ))}
               </div>
@@ -56,9 +50,9 @@ export default function HomePage() {
               </div>
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {sectionForYourEmployees.map((item, index) => (
-                  <div key={index} className="relative">
-                    <img src={item.image} />
-                    <div className='absolute rounded-md backdrop-blur m-2 p-4 bottom-0 left-0 w-full text-center text-xl text-gray-600 font-bold'>
+                  <div key={index} className="flex flex-col justify-center relative p-10">
+                    <img style={{ width: 'auto', maxHeight: 350, objectFit: 'contain' }} src={item.image} />
+                    <div className='mt-6 w-full text-center text-xl text-gray-600 font-bold'>
                       {item.title}
                     </div>
                   </div>

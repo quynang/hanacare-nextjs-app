@@ -1,32 +1,5 @@
 import TopicCard from "@/components/cards/TopicCard"
-
-const features = [
-  {
-    icon: '/images/topic.svg',
-    title: 'Luyện tập thói quen hàng ngày',
-    description: 'HanaCare sẽ đồng hành và nhắc nhở bạn cùng luyện tập thói quen tích cực mỗi ngày.'
-  },
-  {
-    icon: '/images/topic.svg',
-    title: 'Thử thách nâng cao sức khoẻ',
-    description: 'Tham gia các hoạt động fyzical được tổ chức bởi HanaCare cũng có thể theo dõi sức khoẻ và hỗ trợ bạn trong việc tạo ra những thói quen tập luyện tốt hơn.'
-  },
-  {
-    icon: '/images/topic.svg',
-    title: 'Chăm sóc sức khoẻ tiện lợi cùng Đối tác MiniApp',
-    description: 'Ngoài luyện tập, các đối tác MiniApp sẽ giúp bạn tăng trải nghiệm bảo vệ sức khoẻ tiện lợi từ tư vấn khám chữa bệnh đến mua thuốc và hỗ trợ bảo hiểm.'
-  },
-  {
-    icon: '/images/topic.svg',
-    title: 'Đánh giá sức khoẻ',
-    description: 'Tính năng sẽ tính toán một chỉ số sức khoẻ cho người dùng và cung cấp một cái nhìn tổng quan về tình trạng sức khoẻ và hỗ trợ trong việc giữ và cải thiện sức khoẻ của bản thân.'
-  },
-  {
-    icon: '/images/topic.svg',
-    title: 'HanaCoin',
-    description: 'Tham gia thử thách và tích luỹ thật nhiều HanaCoin sẽ giúp bạn đổi được nhiều quà tặng và trải nghiệm các dịch vụ của ứng dụng.'
-  },
-]
+import { features } from "@/config"
 
 const HanacareFeature = () => {
   return (
@@ -42,7 +15,7 @@ const HanacareFeature = () => {
             </div>
             <div className="lg:col-span-4">
               <div className="feature-image relative aos-init aos-animate" data-aos="fade" data-aos-delay="100">
-                <img className="rounded-xl w-full object-cover" style={{ maxHeight: 271 }} src={'https://learn.gthememarket.com/content/images/2022/09/online-education-1.jpg'} alt="The century of climate migration" />
+                <img className="rounded-xl w-full object-cover" style={{ maxHeight: 271 }} src="/images/hanacare-features-banner.jpg" />
               </div>
             </div>
           </div>
@@ -52,7 +25,7 @@ const HanacareFeature = () => {
         <div className="container mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((item, index) => (
-              <TopicCard key={index} title={item.title} description={item.description} image={item.icon} />
+              <TopicCard key={index} title={item.title} description={item.description} image={item.image} />
             ))}
           </div>
         </div>
