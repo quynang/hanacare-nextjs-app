@@ -4,7 +4,7 @@ import Seo from '@/components/Seo';
 import PostCard from '@/components/cards/PostCard';
 import axios from "axios";
 import Image from 'next/image';
-import BlogBanner from '~/images/blog-hero-banner.webp'
+import BlogBanner from '~/images/blog-banner-v1.jpg'
 import useSWRInfinite from 'swr/infinite'
 import { flatten } from '@/lib/helper';
 
