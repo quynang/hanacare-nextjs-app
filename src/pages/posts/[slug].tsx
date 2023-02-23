@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr'
 import axios from "axios";
+import Seo from '@/components/Seo';
 
 export default function PostDetail() {
   const router = useRouter()
@@ -14,8 +15,20 @@ export default function PostDetail() {
   if (!data) return null
   const post = data.posts[0];
 
+  const seoMeta = {
+    title: post?.title,
+    siteName: 'HanaCare',
+    description: post?.excerpt,
+    url: post?.url,
+    type: 'article',
+    robots: 'follow, index',
+    image: post?.feature_image,
+  };
+
+
   return (
     <>
+      <Seo {...seoMeta} />
       <div className="hero-area  relative pt-10 xl:pt-20 pb-10 xl:pb-20 ">
         <div className="container mx-auto">
           <div className="hero-box-3 relative grid gap-8 grid-cols-1 lg:grid-cols-12 text-left">
