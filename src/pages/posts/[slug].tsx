@@ -10,13 +10,13 @@ export default function PostDetail(props: any) {
     title: post?.title,
     siteName: 'HanaCare',
     description: post?.excerpt,
-    url: post?.url,
     type: 'article',
     robots: 'follow, index',
     image: post?.feature_image,
   };
 
 
+  console.log(post)
   return (
     <>
       <Seo {...seoMeta} />
