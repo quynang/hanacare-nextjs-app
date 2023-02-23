@@ -1,11 +1,11 @@
 export const menuItems = [
   {
     label: 'Về HanaCare',
-    href: 'about-hanacare'
+    href: '/about-hanacare'
   },
   {
     label: 'Tính năng',
-    href: 'tinh-nang'
+    href: '/tinh-nang'
   },
   // {
   //   label: 'Đối tác',
@@ -17,7 +17,7 @@ export const menuItems = [
   // },
   {
     label: 'Dành cho doanh nghiệp',
-    href: 'danh-cho-doanh-nghiep'
+    href: '/danh-cho-doanh-nghiep'
   },
   {
     label: 'Blog HanaCare',

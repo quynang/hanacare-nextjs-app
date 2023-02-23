@@ -47,7 +47,7 @@ export default function BlogPage() {
               </div>
               <div>
                 <h4 className="font-serif md:text-2xl lg:text-5xl text-gray-800 font-bold mb-6 hover:text-blue-600">
-                  <a href={`post/${topPost.slug}`}>
+                  <a href={`/${topPost.slug}`}>
                     {topPost?.title}
                   </a>
                 </h4>

@@ -32,6 +32,16 @@ const nextConfig = {
 
     return config;
   },
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/:slug',
+          destination: `/posts/:slug`,
+        },
+      ],
+    }
+  },
 };
 
 module.exports = nextConfig;

@@ -24,7 +24,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       {primary_tag && <a href={`/topic/${primary_tag.slug}`} className="mr-2 inline-block px-6 py-2 text-xs font-medium border rounded-full hover:text-blue-600 group duration-300 mb-4 hover:border-blue-600">{primary_tag.name}</a>}
       <div className="course-content">
         <h4 className="text-xl text-gray-800 hover:text-blue-600 font-bold duration-300">
-          <a href={`/post/${slug}`}>{title}</a>
+          <a href={`/${slug}`}>{title}</a>
         </h4>
         <p className="text-base font-normal mb-4 text-gray-600 line-clamp-2">{excerpt}
         </p>
