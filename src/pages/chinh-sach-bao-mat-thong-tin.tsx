@@ -62,7 +62,7 @@ export default function ChinhSachBaoMatThongTin() {
             8. Liên hệ với chúng tôi
           </h3 >
           <p>
-            Nếu bạn có bất kỳ câu hỏi hoặc ý kiến ​​liên quan đến Chính sách bảo mật của chúng tôi, vui lòng liên hệ với chúng tôi bằng cách gửi email đến địa chỉ hỗ trợ của chúng tôi.
+            Nếu bạn có bất kỳ câu hỏi hoặc ý kiến liên quan đến Chính sách bảo mật của chúng tôi, vui lòng liên hệ với chúng tôi bằng cách gửi email đến địa chỉ hỗ trợ của chúng tôi.
           </p>
         </div>
       </section>
