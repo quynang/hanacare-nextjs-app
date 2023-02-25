@@ -7,23 +7,23 @@ const footerItems = [
   },
   {
     title: 'Tính năng',
-    href: '#'
+    href: '/tinh-nang'
   },
   {
     title: 'Blog HanaCare',
-    href: '#'
+    href: '/blog'
   },
   {
     title: 'Về HanaCare ',
-    href: '#'
+    href: '/about-hanacare'
   },
   {
     title: 'Chính sách Bảo mật thông tin ',
-    href: '#'
+    href: '/chinh-sach-bao-mat-thong-tin'
   },
   {
     title: 'Điều khoản dịch vụ',
-    href: '#'
+    href: '/dieu-khoan-dich-vu'
   }
 ]
 
