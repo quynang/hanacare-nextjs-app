@@ -35,9 +35,12 @@ export default function HomePage() {
                 <h4 className="font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-6">Trải nghiệm cùng HanaCare</h4>
                 <p className="text-lg text-gray-600 font-normal">Chúng tôi cung cấp nội dung sức khoẻ phù hợp vào đúng thời điểm</p>
               </div>
-              <div className="grid sm:grid-col-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {features.slice(0, 4).map((item, index) => (
-                  <TopicCard key={index} title={item.title} image={item.image} />
+              <div className="flex justify-center flex-wrap">
+                {features.map((item, index) => (
+                  <div className='m-4 sm:w-[calc(100%-2rem)] md:w-[calc(33.33%-2rem)] lg:w-[calc(25%-2rem)] '>
+
+                    <TopicCard key={index} title={item.title} image={item.image} />
+                  </div>
                 ))}
               </div>
             </div>
