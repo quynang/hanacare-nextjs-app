@@ -37,7 +37,7 @@ export default function HomePage() {
               </div>
               <div className="flex justify-center flex-wrap">
                 {features.map((item, index) => (
-                  <div key={index} className='m-4 sm:w-[calc(100%-2rem)] md:w-[calc(33.33%-2rem)] lg:w-[calc(25%-2rem)] '>
+                  <div key={index} className='m-4 w-full md:w-[calc(33.33%-2rem)] lg:w-[calc(25%-2rem)] '>
                     <TopicCard title={item.title} image={item.image} />
                   </div>
                 ))}

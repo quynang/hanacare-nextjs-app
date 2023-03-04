@@ -63,6 +63,7 @@ const FooterSection = () => {
                     ©
                     2023
                   </p>
+                  <a className='text-blue-500 hover:text-blue-800 visited:text-purple-600' href="mailto: social@hanacare.vn">social@hanacare.vn</a>
                 </div>
                 <ul className="inline-flex mt-2 items-center text-center lg:text-right gap-2">
                   <li>
