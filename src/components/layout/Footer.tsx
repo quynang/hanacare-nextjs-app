@@ -5,7 +5,7 @@ import Image from 'next/image';
 const footerItems = [
   {
     title: 'Dành cho Doanh nghiệp',
-    href: '#'
+    href: '/danh-cho-doanh-nghiep'
   },
   {
     title: 'Tính năng',
