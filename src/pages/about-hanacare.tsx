@@ -32,7 +32,7 @@ const AboutHanacare = () => {
         <div className="container mx-auto">
           <div className="page-title-box">
             <div className="section-title max-w-4xl ">
-              <h4 className="tag-name font-serif text-4xl lg:text-5xl text-gray-800 font-bold ">Chúng tôi hướng đến cuộc sống tốt đẹp</h4>
+              <h4 className="tag-name text-4xl lg:text-5xl text-gray-800 font-bold ">Chúng tôi hướng đến cuộc sống tốt đẹp</h4>
               <p className="tag-description text-lg text-gray-600 !leading-normal font-normal pt-8">Tại HanaCare, chúng tôi cung cấp ứng dụng CSSK tiện lợi cho mọi người làm chủ cuộc sống hạnh phúc và khỏe mạnh hơn. Bằng cách thu hút họ theo những hoạt động cá nhân, hoạt động nhóm, bổ ích trong suốt hành trình sức khỏe và lợi ích của họ.</p>
             </div>
           </div>

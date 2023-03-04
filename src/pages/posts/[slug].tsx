@@ -28,7 +28,7 @@ export default function PostDetail(props: any) {
                 {post.tags.map((tag: any, index: number) =>
                   <a key={index} href={`/topic/${tag.slug}`} className="mr-2 inline-block px-6 py-2 text-sm font-medium border rounded-full hover:text-blue-800 group duration-300 mb-4">{tag.name}</a>
                 )}
-                <h1 className="w-full font-serif !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">{post.title}</h1>
+                <h1 className="w-full !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">{post.title}</h1>
               </div>
             </div>
             <div className="lg:col-span-4">

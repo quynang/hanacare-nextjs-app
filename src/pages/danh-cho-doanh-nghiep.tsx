@@ -26,7 +26,7 @@ const ForEnterprise = () => {
           <div className="hero-box-3 relative grid gap-8 grid-cols-1 lg:grid-cols-12 text-left">
             <div className="lg:col-span-8">
               <div className="hero-content lg:flex flex-wrap text-left relative lg:pr-14">
-                <h1 className="w-full font-serif !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">Nhân viên là tài sản quý giá nhất của bạn</h1>
+                <h1 className="w-full !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">Nhân viên là tài sản quý giá nhất của bạn</h1>
                 <p className="text-md lg:text-lg text-gray-600 font-normal">Mang đến cho nhân viên của bạn giải pháp sức khỏe và cùng trải nghiệm, họ sẽ sử dụng và yêu thích chúng.</p>
               </div>
             </div>

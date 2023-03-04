@@ -6,7 +6,7 @@ export default function ChinhSachBaoMatThongTin() {
         <div className="container mx-auto" >
           <div className="page-title-box" >
             <div className="section-title gh-canvas max-w-4xl mx-auto  mb-20" >
-              <h1 className="w-full font-serif text-4xl lg:text-5xl text-gray-800 font-bold mb-8" >Chính sách bảo mật cho Ứng dụng HanaCare</h1 >
+              <h1 className="w-full text-4xl lg:text-5xl text-gray-800 font-bold mb-8" >Chính sách bảo mật cho Ứng dụng HanaCare</h1 >
             </div>
           </div>
         </div>

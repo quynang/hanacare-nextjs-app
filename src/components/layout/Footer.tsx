@@ -32,7 +32,7 @@ const footerItems = [
 const FooterSection = () => {
   return (
     <footer className="footer-area relative  pt-20 xl:pt-28">
-      <div className="footer-bg bg-blue-50 absolute bottom-0 left-0 right-0 w-full block h-[calc(100%-11.4rem)]">
+      <div className="footer-bg  bg-blue-50 absolute bottom-0 left-0 right-0 w-full block h-[calc(100%-11.4rem)]">
       </div>
       <div className="container mx-auto">
         <div className="bg-white border p-8 md:p-14 rounded-lg relative z-10">

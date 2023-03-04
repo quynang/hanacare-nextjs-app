@@ -162,7 +162,6 @@
 .gh-content ul,
 .gh-content var {
   color: var(--gray-400);
-  font-family: var(--font-sans)
 }
 
 .gh-content pre,
@@ -541,7 +540,6 @@
   text-rendering: optimizeLegibility;
   font-weight: 500;
   color: var(--gray-800);
-  font-family: var(--font-serif)
 }
 
 .gh-content h1 {

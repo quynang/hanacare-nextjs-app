@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ className, onClickMobileMenu }) => {
             <ul className="navbar-nav lg:flex items-center" style={{ opacity: 1 }}>
               {menuItems.map((item, index) =>
                 <li key={index} style={{ opacity: 1 }}>
-                  <Link className="text-base text-gray-800 hover:text-blue-600 font-medium block whitespace-nowrap px-5 py-2 lg:py-2" href={item.href}>
+                  <Link className="text-base text-gray-800 hover:text-blue-600 font-semibold block whitespace-nowrap px-5 py-2 lg:py-2" href={item.href}>
                     {item.label}
                   </Link>
                 </li>

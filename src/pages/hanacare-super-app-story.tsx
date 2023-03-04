@@ -26,7 +26,7 @@ const HanacareSuperAppStory = () => {
           <div className="hero-box-3 relative grid gap-8 grid-cols-1 lg:grid-cols-12 text-left">
             <div className="lg:col-span-8">
               <div className="hero-content lg:flex flex-wrap text-left relative lg:pr-14">
-                <h1 className="w-full font-serif !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">Câu chuyện về HanaCare - Nguồn cảm hứng khởi đầu</h1>
+                <h1 className="w-full !leading-tight text-4xl lg:text-5xl text-gray-800 font-bold  mb-6">Câu chuyện về HanaCare - Nguồn cảm hứng khởi đầu</h1>
               </div>
             </div>
             <div className="lg:col-span-4">
