@@ -26,22 +26,22 @@ const HanacareSuperAppStory = () => {
     <>
       <div className='hero-area  relative pt-10 pb-10 xl:pt-20 xl:pb-20 '>
         <div className='container mx-auto'>
-          <div className='hero-box-3 relative grid grid-cols-1 gap-8 text-left md:grid-cols-12'>
-            <div className='md:col-span-8'>
+          <div className='hero-box-3 relative grid grid-cols-1 gap-8 text-left lg:grid-cols-12'>
+            <div className='lg:col-span-8'>
               <div className='hero-content relative flex-wrap text-left lg:flex'>
                 <h1 className='mb-6 w-full text-4xl font-bold !leading-tight text-gray-800  lg:text-5xl'>
                   Câu chuyện về HanaCare - Nguồn cảm hứng khởi đầu
                 </h1>
               </div>
             </div>
-            <div className='md:col-span-4'>
+            <div className='lg:col-span-4'>
               <div
                 className='feature-image aos-init aos-animate relative'
                 data-aos='fade'
                 data-aos-delay='100'
               >
                 <img
-                  className='rounded-xl'
+                  className='w-full rounded-xl object-cover'
                   src='/images/hanacare-founder.jpg'
                 />
               </div>
