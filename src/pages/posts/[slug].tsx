@@ -5,7 +5,8 @@ import Seo from '@/components/Seo';
 
 export default function PostDetail(props: any) {
   const post = props.data.posts[0];
-
+  const { query } = useRouter();
+  const isWebViewMode = query?.is_webview === 'true';
   const seoMeta = {
     title: post?.title,
     siteName: 'HanaCare',
@@ -58,7 +59,9 @@ export default function PostDetail(props: any) {
         <div
           className='gh-content gh-canvas mx-auto max-w-4xl pb-20 xl:pb-20'
           dangerouslySetInnerHTML={{
-            __html: post.html.replace(/<a\b[^>]*>(.*?)<\/a>/gi, ''),
+            __html: isWebViewMode
+              ? post.html.replace(/<\/?a[^>]*>/g, '')
+              : post.html,
           }}
         />
       </div>
