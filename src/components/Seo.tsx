@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Hanacare Super App',
+  title: 'Hanacare App',
   siteName: 'HanaCare',
   description:
     'HanaCare chăm sóc sức khỏe và hạnh phúc của mọi người',

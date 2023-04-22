@@ -1,8 +1,8 @@
 const BlocksContent = [
   {
     img: '/images/hanacare-story.jpg',
-    slug: 'hanacare-super-app-story',
-    title: 'Câu chuyện về HanaCare Super App',
+    slug: 'hanacare-app-story',
+    title: 'Câu chuyện về HanaCare App',
     description:
       'Câu chuyện được trải nghiệm bởi chính Nhà sáng lập và niềm tin từ những  đồng đội HanaCare',
   },

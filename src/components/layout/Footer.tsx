@@ -62,7 +62,7 @@ const FooterSection = () => {
                     356/34A Xô Viết Nghệ Tĩnh, Phường 25, Quận Bình Thạnh, Thành
                     phố Hồ Chí Minh, Việt Nam
                   </p>
-                  <p className=''>HanaCare Super App © 2023</p>
+                  <p className=''>HanaCare App © 2023</p>
                   <a
                     className='text-blue-500 visited:text-purple-600 hover:text-blue-800'
                     href='mailto: social@hanacare.vn'
