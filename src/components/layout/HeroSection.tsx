@@ -22,13 +22,13 @@ const HeroSection = () => {
             <div className='fade-in flex w-full justify-start'>
               <a
                 href='https://apps.apple.com/us/app/hanacare/id1670385640'
-                target='_blank'
+                target='blank'
               >
                 <AppStore width='auto' className='mr-4 h-12 w-auto' />
               </a>
               <a
                 href='https://play.google.com/store/apps/details?id=com.hanacare'
-                target='_blank'
+                target='blank'
               >
                 <PlayStore width='auto' className='h-12 w-auto' />
               </a>
