@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
 import axios from 'axios';
 import Seo from '@/components/Seo';
+import Link from 'next/link';
 
 export default function PostDetail(props: any) {
   const post = props.data.posts[0];
+  const author = post.authors[0];
   const { query } = useRouter();
   const isWebViewMode = query?.is_webview === 'true';
   const seoMeta = {
@@ -57,13 +58,21 @@ export default function PostDetail(props: any) {
       </div>
       <div className='single-are pb-20'>
         <div
-          className='gh-content gh-canvas mx-auto max-w-4xl pb-20 xl:pb-20'
+          className='gh-content gh-canvas mx-auto max-w-4xl pb-10'
           dangerouslySetInnerHTML={{
             __html: isWebViewMode
               ? post.html.replace(/<\/?a[^>]*>/g, '')
               : post.html,
           }}
         />
+        <div className='author container mx-auto flex max-w-4xl justify-end pb-20 xl:pb-20'>
+          <Link
+            className='text-blue-600 hover:underline'
+            href={`/authors/${author.name}`}
+          >
+            {author.name}
+          </Link>
+        </div>
       </div>
     </>
   );
@@ -71,7 +80,7 @@ export default function PostDetail(props: any) {
 
 export async function getServerSideProps(context: any) {
   const { slug } = context.query;
-  const url = `https://ghost.hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags`;
+  const url = `https://ghost.hanacare.vn/ghost/api/content/posts/slug/${slug}/?key=942efd06374ce7156d0bf617c4&include=tags,authors`;
   const fetcher = async () => await axios.get(url).then((res) => res.data);
   const data = await fetcher();
   return {
