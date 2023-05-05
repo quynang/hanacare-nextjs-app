@@ -8,24 +8,17 @@ import { Open_Sans } from '@next/font/google';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 const opensans = Open_Sans({ subsets: ['latin'] });
-import { initGA, logPageView } from '../utils/analytics';
-
-declare global {
-  interface Window {
-    GA_INITIALIZED: boolean;
-  }
-}
+import { initGTM, logPageView } from '../utils/tracking';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { query } = useRouter();
   const isWebViewMode = query?.is_webview === 'true';
 
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      
-      window.GA_INITIALIZED = true;
+    if (!window.dataLayer) {
+      initGTM();
     }
+    
     logPageView();
   }, []);
 
