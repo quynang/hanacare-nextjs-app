@@ -32,6 +32,9 @@ export default function HomePage() {
       <main>
         <div className='container mx-auto'>
           <HeroSection />
+          <div className='pt-20 xl:pt-28'>
+            <img src="/images/active-campaign-banner.webp"></img>
+          </div>
           <section className='topics-area pt-20 xl:pt-28'>
             <div className='container mx-auto'>
               <div className='section-title mx-auto mb-6 max-w-xl text-center lg:mb-16'>
