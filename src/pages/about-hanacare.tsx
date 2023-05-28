@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const BlocksContent = [
   {
     img: '/images/hanacare-story.jpg',
@@ -66,7 +68,7 @@ const AboutHanacare = () => {
                   </div>
                   <div className='course-content'>
                     <h4 className='text-xl font-bold text-gray-800 duration-300 hover:text-blue-600'>
-                      <a href={`${item.slug}`}>{item.title}</a>
+                      <Link href={`${item.slug}`}>{item.title}</Link>
                     </h4>
                     <p className='mb-4 text-base font-normal text-gray-600 line-clamp-2'>
                       {item.description}

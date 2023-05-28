@@ -27,7 +27,7 @@ export default function HomePage() {
   if (!data) <h1>Loading...</h1>;
 
   return (
-    <Layout>
+    <>
       <Seo />
       <main>
         <div className='container mx-auto'>
@@ -114,6 +114,6 @@ export default function HomePage() {
           </section>
         </div>
       </main>
-    </Layout>
+    </>
   );
 }

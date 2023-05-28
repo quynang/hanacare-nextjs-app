@@ -26,13 +26,13 @@ export default function PostDetail(props: any) {
             <div className='lg:col-span-8'>
               <div className='hero-content relative flex-wrap text-left lg:flex lg:pr-14'>
                 {post.tags.map((tag: any, index: number) => (
-                  <a
+                  <Link
                     key={index}
                     href={`/topic/${tag.slug}`}
                     className='group mr-2 mb-4 inline-block rounded-full border px-6 py-2 text-sm font-medium duration-300 hover:text-blue-800'
                   >
                     {tag.name}
-                  </a>
+                  </Link>
                 ))}
                 <h1 className='mb-6 w-full text-4xl font-bold !leading-tight text-gray-800  lg:text-5xl'>
                   {post.title}

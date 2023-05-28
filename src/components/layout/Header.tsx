@@ -11,7 +11,6 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ className, onClickMobileMenu }) => {
 
-
   return (
     <header className={`${className ? className : ''} header-area top-0 left-0 right-0 py-4 lg:py-4 z-[250] bg-white max-h-24`} style={{ opacity: 1 }}>
       <div className="container mx-auto">
