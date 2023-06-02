@@ -29,7 +29,7 @@ export default function BlogPage() {
   const restPosts = [...restFirstBatch, ...flatten(restBatch.map(batch => batch.posts))]
 
   return (
-    <Layout>
+    <>
       <Seo title='Hanacare Blog' />
       <main>
         <div className="hero-bg relative">
@@ -83,6 +83,6 @@ export default function BlogPage() {
           </section>
         </div>
       </main >
-    </Layout >
+    </>
   );
 }
