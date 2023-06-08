@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - 'release-[0-9]{8}-[0-9]{1,2}'
 
 jobs:
   build:
@@ -29,4 +30,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: ".,!node_modules"
-          target: "~/var/www/hanacare-vn"
+          target: "/var/www/hanacare-vn"
