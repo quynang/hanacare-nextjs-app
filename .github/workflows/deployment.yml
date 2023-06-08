@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     tags:
-      - 'release-[0-9]{8}-[0-9]{1,2}'
+      - 'refs/tags/release-[0-9]{8}-[0-9]{1,2}'
 
 jobs:
   build:
