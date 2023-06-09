@@ -3,7 +3,7 @@ name: CI
 on:
   create:
     tags:
-      - 'release-[0-9]{8}-[0-9]{1,2}'
+      - 'release-[0-9]{8}-[1-9]{1,2}'
 
 jobs:
   build:
@@ -11,25 +11,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Get tag name
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: 14.x
-      
-      - name: Install dependencies
-        run: yarn
-      
-      - name: Run Build
-        run: yarn build
-      
-      - name: Copy dist to VPS
-        uses: appleboy/scp-action@master
+      - name: Pull latest and restart sever
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: ".,!node_modules"
-          target: "/var/www/${{ env.RELEASE_VERSION }}"
+          script: |
+            cd /var/www/hanacare-nextjs-app
+            yarn build
+            pm2 reload hanacare
+            sudo systemctl restart nginx
