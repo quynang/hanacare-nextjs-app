@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
       - name: Pull latest and restart sever
         uses: appleboy/ssh-action@master
         with:
@@ -20,6 +19,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/hanacare-nextjs-app
+            git pull origin main
             yarn build
             pm2 reload hanacare
             sudo systemctl restart nginx
