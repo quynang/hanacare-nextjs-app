@@ -22,5 +22,9 @@ export const menuItems = [
   {
     label: 'Blog HanaCare',
     href: '/blog'
-  }
+  },
+  {
+    label: 'Danh sách thử thách',
+    href: '/danh-sach-thu-thach'
+  },
 ]
