@@ -9,6 +9,7 @@ import { WebviewProvider } from '@/contexts/WebviewContext';
 const opensans = Open_Sans({ subsets: ['latin'] });
 import { initGTM, logPageView } from '../utils/tracking';
 import Layout from '@/components/layout/Layout';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { query } = useRouter();
@@ -30,6 +31,29 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className={opensans.className}>
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K887RQV3');`,
+          }}
+        />
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K887RQV3"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          }}
+        />
+        <script
+          id='ultra_embed'
+          type='text/javascript'
+          src='https://salekit.io/embed/goal?id=65586803f1435736f42a541d3a924595'
+          async
+        />
+      </Head>
       <WebviewProvider value={isWebview}>
         <Layout>
           <Component {...pageProps} />
