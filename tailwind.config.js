@@ -12,19 +12,18 @@ module.exports = {
       },
       colors: {
         primary: {
-          // Customize it on globals.css :root
-          50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--tw-color-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--tw-color-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--tw-color-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--tw-color-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--tw-color-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
+          50: '#eff9ff',
+          100: '#def3ff',
+          200: '#b6e9ff',
+          300: '#75daff',
+          400: '#2cc8ff',
+          500: '#00b6fd',
+          600: '#008ed4',
+          700: '#0071ab',
+          800: '#005f8d',
+          900: '#064f74',
+          950: '#04324d',
         },
-        dark: '#222222',
       },
       keyframes: {
         flicker: {
