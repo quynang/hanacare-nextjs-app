@@ -74,7 +74,7 @@ const FooterSection = () => {
                   <li>
                     <a
                       className='group flex h-10 w-10 items-center justify-center rounded-full border bg-blue-50 duration-300  hover:bg-white '
-                      href='https://www.facebook.com/hanacaresuperapp'
+                      href='https://www.facebook.com/hanacareapp'
                     >
                       <svg
                         className=' text-gray-600 group-hover:text-blue-800 '

@@ -44,7 +44,7 @@ const FooterDark = () => {
             <li>
               <a
                 className='group flex h-10 w-10 items-center justify-center'
-                href='https://www.facebook.com/hanacaresuperapp'
+                href='https://www.facebook.com/hanacareapp'
               >
                 <svg
                   className='text-[#329DFF] group-hover:text-blue-800 '
