@@ -115,8 +115,9 @@ export default function BuocVuiSongKhoe() {
         </div>
       </section>
       <section className='flex gap-[24px] overflow-auto bg-[#001730] px-6 py-[72px] lg:justify-center lg:px-[140px]'>
-        {PAGE_SECTIONS.map((s: any) => (
+        {PAGE_SECTIONS.map((s, index) => (
           <div
+            key={index}
             onClick={() => scrollToElement(s.scrollTarget)}
             className='relative flex h-[272px] w-[272px] min-w-[272px] cursor-pointer items-center justify-center rounded-xl border-2 border-[#329DFF] p-2 hover:bg-[#329DFF]'
           >
@@ -179,8 +180,8 @@ export default function BuocVuiSongKhoe() {
           CÁCH THỨC THAM GIA
         </h1>
         <div className='flex max-w-[1080px] flex-col items-center gap-[64px] text-center lg:flex-row lg:gap-[30px]'>
-          {TUTORIAL_STEPS.map((item: any) => (
-            <div className='flex flex-col items-center'>
+          {TUTORIAL_STEPS.map((item, index) => (
+            <div key={index} className='flex flex-col items-center'>
               <img className='w-[312px]' src={item.img} />
               <div>
                 <p className='mb-[12px] text-[32px] font-bold text-white lg:mb-6'>
