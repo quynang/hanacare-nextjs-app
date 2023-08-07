@@ -36,8 +36,8 @@ const FooterDark = () => {
           <Image width={52} src={Logo} alt='HanaCare Logo' />
           <div className='mt-2 text-center text-sm font-normal'>
             <p className='text-[#8197B7]'>
-              356/34A Xô Viết Nghệ Tĩnh, Phường 25, Quận Bình Thạnh, Thành phố
-              Hồ Chí Minh, Việt Nam
+              VPDD HanaCare: Số 4 Bình Lợi, Phường 13, Quận Bình Thạnh, Thành
+              phố Hồ Chí Minh
             </p>
           </div>
           <ul className='mt-2 inline-flex items-center gap-2 text-center lg:text-right'>
