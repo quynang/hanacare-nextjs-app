@@ -270,8 +270,9 @@ export default function BuocVuiSongKhoe() {
                   Mục tiêu:
                 </span>
                 <span className='text-[16px] font-[500] text-white lg:text-[24px]'>
-                  Chọn ra 3 người tham gia có tổng số quãng đường đi dài nhất
-                  trong 10 ngày liên tiếp.
+                  BTC sẽ trao quà cho tất cả người chơi đạt đủ điều kiện chương
+                  trình và có phần thưởng cho TOP 80 với giá trị từ cao xuống
+                  thấp.
                 </span>
               </div>
             </div>
