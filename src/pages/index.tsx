@@ -7,6 +7,7 @@ import useSWR from 'swr';
 import axios from 'axios';
 import TopicCard from '@/components/cards/TopicCard';
 import { features } from '@/config';
+import Link from 'next/link';
 
 const sectionForYourEmployees = [
   { image: '/images/mobile-feature-1.png', title: 'Đánh giá chỉ số hạnh phúc' },
@@ -32,9 +33,12 @@ export default function HomePage() {
       <main>
         <div className='container mx-auto'>
           <HeroSection />
-          <div className='pt-20 xl:pt-28'>
-            <img src="/images/active-campaign-banner.webp"></img>
-          </div>
+          <Link href='/buoc-vui-song-khoe'>
+            <img
+              className='pt-20 xl:pt-28'
+              src='/images/campaign/buoc-vui-song-khoe.webp'
+            ></img>
+          </Link>
           <section className='topics-area pt-20 xl:pt-28'>
             <div className='container mx-auto'>
               <div className='section-title mx-auto mb-6 max-w-xl text-center lg:mb-16'>
