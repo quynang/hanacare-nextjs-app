@@ -201,7 +201,7 @@ export default function BuocVuiSongKhoe() {
             ))}
           </div>
           <a
-            href='https://hanacare.page.link/buoc-vui-song-khoe-challenge'
+            href='https://hanacare.page.link/buoc-vui-song-khoe'
             className='mt-[40px] bg-[#FF823D] px-[24px] py-[16px] text-[24px] font-bold text-white'
           >
             THAM GIA NGAY
