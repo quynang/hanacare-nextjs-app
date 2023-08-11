@@ -6,7 +6,7 @@ const defaultMeta = {
   title: 'Hanacare App',
   siteName: 'HanaCare',
   description:
-    'HanaCare chăm sóc sức khỏe và hạnh phúc của mọi người',
+    'Bằng việc xây dựng các thói quen lành mạnh, cộng đồng sức khỏe, cộng đồng chuyên gia, HanaCare mang đến cho bạn trạng thái wellbeing - khỏe mạnh và hạnh phúc trọn vẹn',
   url: 'https://hanacare.vn',
   type: 'website',
   robots: 'follow, index',
