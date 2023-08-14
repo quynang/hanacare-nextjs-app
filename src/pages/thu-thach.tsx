@@ -26,22 +26,13 @@ export default function ChallengeList() {
             <ChallengeCategories />
           </section>
           <section className='pt-8'>
-            <div className='mb-8 text-2xl font-bold'>SẮP DIỄN RA</div>
-            <div className='flex gap-6'>
-              <ChallengeCardList type='upcomming' />
-            </div>
+            <ChallengeCardList type='upcomming' />
           </section>
           <section className='pt-8'>
-            <div className='mb-8 text-2xl font-bold'>ĐANG DIỄN RA</div>
-            <div className='flex gap-6'>
-              <ChallengeCardList type='running' />
-            </div>
+            <ChallengeCardList type='running' />
           </section>
           <section className='pt-8'>
-            <div className='mb-8 text-2xl font-bold'>ĐÃ KẾT THÚC</div>
-            <div className='flex gap-6'>
-              <ChallengeCardList type='finished' />
-            </div>
+            <ChallengeCardList type='finished' />
           </section>
         </div>
       </main>

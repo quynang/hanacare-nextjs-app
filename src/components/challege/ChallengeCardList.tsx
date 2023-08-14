@@ -7,22 +7,34 @@ const challegeTypeMapping = {
   finished: 1,
 };
 
+const titleChallengeTypeMapping = {
+  upcomming: 'SẮP DIỄN RA',
+  running: 'ĐANG DIỄN RA',
+  finished: 'ĐÃ KẾT THÚC',
+};
 type ChallengeCardListProps = {
   type: 'upcomming' | 'running' | 'finished';
 };
 const ChallengeCardList: React.FC<ChallengeCardListProps> = ({ type }) => {
-  const time = challegeTypeMapping[type];
-
   const { data, isLoading, isFetching } = usePublicChallenges({
     limit: 4,
-    time: time,
+    time: challegeTypeMapping[type],
   });
 
+  if (isLoading) return null;
+
+  if (!isLoading && !data.data?.items?.length) return null;
+
   return (
-    <div className='flex gap-5'>
-      {(data?.data?.items || []).map((item: any, index: number) => (
-        <ChallengeCard key={index} id={index} type={type} data={item} />
-      ))}
+    <div>
+      <div className='mb-8 text-2xl font-bold'>
+        {titleChallengeTypeMapping[type]}
+      </div>
+      <div className='flex gap-6'>
+        {(data?.data?.items || []).map((item: any, index: number) => (
+          <ChallengeCard key={index} id={index} type={type} data={item} />
+        ))}
+      </div>
     </div>
   );
 };
