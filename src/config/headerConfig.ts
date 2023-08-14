@@ -13,11 +13,6 @@ export const menuItems = [
   },
   {
     label: 'Blog HanaCare',
-<<<<<<< Updated upstream
-    href: '/blog'
-  }
-]
-=======
     href: '/blog',
   },
   {
@@ -25,4 +20,3 @@ export const menuItems = [
     href: '/thu-thach',
   },
 ];
->>>>>>> Stashed changes

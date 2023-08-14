@@ -11,19 +11,7 @@ module.exports = {
         serif: ['var(--font-sans)', ...fontFamily.serif],
       },
       colors: {
-        primary: {
-          50: '#eff9ff',
-          100: '#def3ff',
-          200: '#b6e9ff',
-          300: '#75daff',
-          400: '#2cc8ff',
-          500: '#00b6fd',
-          600: '#008ed4',
-          700: '#0071ab',
-          800: '#005f8d',
-          900: '#064f74',
-          950: '#04324d',
-        },
+        primary: '#00b6fd',
       },
       keyframes: {
         flicker: {
@@ -54,6 +42,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('flowbite/plugin'),
     require('@tailwindcss/line-clamp'),
     function ({ addComponents }) {
       addComponents({
@@ -64,8 +53,8 @@ module.exports = {
           '@screen xl': {
             maxWidth: '1320px',
           },
-        }
-      })
-    }
+        },
+      });
+    },
   ],
 };
