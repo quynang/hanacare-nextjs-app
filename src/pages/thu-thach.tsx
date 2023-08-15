@@ -1,15 +1,11 @@
 import * as React from 'react';
 import Seo from '@/components/Seo';
-import ChallengeCard from '@/components/cards/ChallengeCard';
 import HanaCarousel from '@/components/carousel/HanaCarousel';
-import axios from 'axios';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { fetchChallengeCategories } from '@/hooks/useChallengeCategories';
-import ChallengeCategories from '@/components/challege/ChallegeCategories';
+import ChallengeCategories from '@/components/challenge/ChallegeCategories';
 import { fetchPublicChallenges } from '@/hooks/usePublicChallenge';
-import ChallengeCardList from '@/components/challege/ChallengeCardList';
-
-const CHALLEGE_CATEGORIES = ['Tất cả', 'Chạy bộ', 'Đi bộ', 'Đạp xe'];
+import ChallengeCardList from '@/components/challenge/ChallengeCardList';
 
 export default function ChallengeList() {
   return (

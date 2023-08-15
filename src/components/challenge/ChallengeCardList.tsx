@@ -1,4 +1,4 @@
-import ChallengeCard from '@/components/cards/ChallengeCard';
+import ChallengeCard from '@/components/challenge/ChallengeCard';
 import { usePublicChallenges } from '@/hooks/usePublicChallenge';
 
 const challegeTypeMapping = {
@@ -32,7 +32,7 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({ type }) => {
       </div>
       <div className='flex gap-6'>
         {(data?.data?.items || []).map((item: any, index: number) => (
-          <ChallengeCard key={index} id={index} type={type} data={item} />
+          <ChallengeCard key={index} type={type} data={item} />
         ))}
       </div>
     </div>
