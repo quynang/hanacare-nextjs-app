@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 type OpenGraphType = {
   siteName: string;
   description: string;
@@ -21,8 +22,9 @@ export function openGraph({
     : undefined;
   const ogDesc = encodeURIComponent(description.trim());
 
-  return `https://og.<your-domain>/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
-    }`;
+  return `https://og.<your-domain>/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
+    ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
+  }`;
 }
 
 export function getFromLocalStorage(key: string): string | null {
@@ -41,6 +43,46 @@ export function getFromSessionStorage(key: string): string | null {
 
 export function flatten(arr: any[]): any[] {
   return arr.reduce(function (flat, toFlatten) {
-    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+    return flat.concat(
+      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+    );
   }, []);
+}
+
+export function stringToSlug(str: string) {
+  // remove accents
+  var from =
+      'àáãảạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệđùúủũụưừứửữựòóỏõọôồốổỗộơờớởỡợìíỉĩịäëïîöüûñçýỳỹỵỷ',
+    to =
+      'aaaaaaaaaaaaaaaaaeeeeeeeeeeeduuuuuuuuuuuoooooooooooooooooiiiiiaeiiouuncyyyyy';
+  for (var i = 0, l = from.length; i < l; i++) {
+    str = str.replace(RegExp(from[i], 'gi'), to[i]);
+  }
+
+  str = str
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\-]/g, '-')
+    .replace(/-+/g, '-');
+
+  return str;
+}
+
+export function getChallengeMinestone(
+  start_time: string,
+  end_time: string
+): 'upcomming' | 'running' | 'finished' {
+  if (!start_time || !end_time) return 'upcomming';
+
+  const today = dayjs();
+
+  if (dayjs(end_time).isBefore(today, 'day')) {
+    return 'finished';
+  } else {
+    if (dayjs(start_time).isAfter(today, 'day')) {
+      return 'upcomming';
+    } else {
+      return 'running';
+    }
+  }
 }

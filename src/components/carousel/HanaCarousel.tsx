@@ -1,23 +1,32 @@
 import { Carousel, type CustomFlowbiteTheme } from 'flowbite-react';
-
-const hanaTheme: CustomFlowbiteTheme['carousel'] = {
-  root: {
-    leftControl: 'hidden',
-    rightControl: 'hidden',
-  },
-  indicators: {
-    active: {
-      off: 'bg-[#BCECFF]',
-      on: 'bg-[#00B6FD] rounded-full w-4',
-    },
-    base: 'h-1.5 w-4 rounded-none',
-    wrapper:
-      'absolute bg-[#BCECFF] -bottom-5 left-1/2 flex -translate-x-1/2 space-x-0 rounded-lg overflow-hidden',
-  },
-};
+import { useState } from 'react';
+import Slider from 'react-slick';
+import { twMerge } from 'tailwind-merge';
 
 const HanaCarousel: React.FC<any> = ({ children }) => {
-  return <Carousel theme={hanaTheme}>{children}</Carousel>;
+  const [currentSlide, setCurrentSlide] = useState<number | undefined>(0);
+
+  const carouselConfig = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    beforeChange: (prev: number, next: number) => {
+      setCurrentSlide(next);
+    },
+    customPaging: (i: number) => (
+      <div
+        className={twMerge(
+          'mt-4 !mr-0 !ml-0 h-1.5 rounded-lg bg-[#BCECFF]',
+          currentSlide === i ? 'bg-[#00B6FD]' : ''
+        )}
+      ></div>
+    ),
+  };
+  return <Slider {...carouselConfig}>{children}</Slider>;
 };
 
 export default HanaCarousel;

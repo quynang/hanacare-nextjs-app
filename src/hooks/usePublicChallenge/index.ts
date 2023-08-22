@@ -5,6 +5,7 @@ import axios from 'axios';
 const defaultParams: any = {
   limit: 10,
   time: 1,
+  category_id: undefined,
 };
 
 const fetchPublicChallenges = async (params = defaultParams) => {

@@ -4,7 +4,8 @@ import dayjs from 'dayjs';
 import { DATE_FORMAT_DISPLAY } from '@/constant';
 import ChallengeTop3UserAvatar from '@/components/challenge/ChallengeTop3UserAvatar';
 import { useMemo } from 'react';
-import { copyFileSync } from 'fs';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 type ChallengeProps = {
   type?: 'upcomming' | 'running' | 'finished';
@@ -18,6 +19,8 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
   if (!data) return null;
 
   const { id } = data;
+
+  const router = useRouter();
 
   const period = `${dayjs(data.start_time).format(
     DATE_FORMAT_DISPLAY
@@ -33,17 +36,21 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
       const take = dayjs().diff(data.start_time, 'day');
       return (take / total) * 100;
     } else {
-      return 100;
+      return 0;
     }
   }, [data, type]);
 
   return (
-    <div className='flex h-[406px] w-[312px] flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]'>
-      <img
-        className='h-[144px] w-[312px] rounded-t-2xl object-cover'
-        src={data?.images?.[0]}
-        alt=''
-      />
+    <div className='m-x-4 flex h-[406px] w-[312px] flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]'>
+      <Link href={`/thu-thach/${id}`} shallow={true}>
+        <img
+          className='h-[144px] w-[312px] cursor-pointer rounded-t-2xl object-cover'
+          src={data?.images?.[0] || '/svg/fallback-img.svg'}
+          onError={(e) => (e.currentTarget.src = '/svg/fallback-img.svg')}
+          alt=''
+        />
+      </Link>
+
       <div className='flex flex-1 flex-col justify-between p-4'>
         <div>
           <h4 className='mb-2 font-bold line-clamp-1'>{data?.name}</h4>
@@ -51,7 +58,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
             <Calendar className='mr-2' />
             <span className='text-xs'>{period}</span>
           </div>
-          <div className='h-1 w-full rounded-full bg-gray-200 dark:bg-gray-700'>
+          <div className='h-1 w-full rounded-full bg-[#DDFFBB]'>
             <div
               className='h-1 rounded-full bg-[#75C905]'
               style={{ width: `${progressData}%` }}
@@ -71,7 +78,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
                 </div>
                 <div>
                   <span className='mr-1 text-[#75C905]'>{remainDay}</span>
-                  <span>ngày kết thúc</span>
+                  <span>ngày nữa kết thúc</span>
                 </div>
               </div>
             )}

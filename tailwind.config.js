@@ -38,11 +38,13 @@ module.exports = {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
       },
+      lineClamp: {
+        15: '15',
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('flowbite/plugin'),
+    require('daisyui'),
     require('@tailwindcss/line-clamp'),
     function ({ addComponents }) {
       addComponents({
