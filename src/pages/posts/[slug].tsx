@@ -68,7 +68,7 @@ export default function PostDetail(props: any) {
         <div className='author container mx-auto flex max-w-4xl justify-end pb-20 xl:pb-20'>
           <Link
             className='text-blue-600 hover:underline'
-            href={`/authors/${author.name}`}
+            href={`/authors/${author.id}`}
           >
             {author.name}
           </Link>
