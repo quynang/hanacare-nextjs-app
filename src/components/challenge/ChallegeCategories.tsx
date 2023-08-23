@@ -17,11 +17,12 @@ const ChallengeCategories: React.FC<any> = ({ activeCategory, onClick }) => {
       </button>
       {data?.data?.items.map((item: any) => (
         <button
-          onClick={() => onClick(item)}
+          key={item.id}
+          onClick={() => onClick(item.id)}
           className={twMerge(
             'rounded-lg border border-primary bg-transparent py-2 px-4 font-semibold text-primary hover:border-transparent hover:bg-primary hover:text-white',
             activeCategory === item.id &&
-              'border-transparent bg-primary text-white'
+            'border-transparent bg-primary text-white'
           )}
         >
           {item.name}

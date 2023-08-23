@@ -1,4 +1,3 @@
-import { Carousel, type CustomFlowbiteTheme } from 'flowbite-react';
 import { useState } from 'react';
 import Slider from 'react-slick';
 import { twMerge } from 'tailwind-merge';
@@ -26,7 +25,7 @@ const HanaCarousel: React.FC<any> = ({ children }) => {
       ></div>
     ),
   };
-  return <Slider {...carouselConfig}>{children}</Slider>;
+  return <Slider className='w-full' {...carouselConfig}>{children}</Slider>;
 };
 
 export default HanaCarousel;

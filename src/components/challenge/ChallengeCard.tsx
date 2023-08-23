@@ -10,17 +10,16 @@ import Link from 'next/link';
 type ChallengeProps = {
   type?: 'upcomming' | 'running' | 'finished';
   data: Challenge;
+  width?: number
 };
 
 const ChallengeCard: React.FC<ChallengeProps> = ({
   type = 'upcomming',
   data,
+  width
 }) => {
-  if (!data) return null;
 
   const { id } = data;
-
-  const router = useRouter();
 
   const period = `${dayjs(data.start_time).format(
     DATE_FORMAT_DISPLAY
@@ -40,11 +39,15 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
     }
   }, [data, type]);
 
+  const cardWidthClass = width ? `w-[${width}px]` : 'w-full'
+  if (!data) return null;
+
+
   return (
-    <div className='m-x-4 flex h-[406px] w-[312px] flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]'>
+    <div className={`m-x-4 flex h-[406px] ${cardWidthClass} flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]`}>
       <Link href={`/thu-thach/${id}`} shallow={true}>
         <img
-          className='h-[144px] w-[312px] cursor-pointer rounded-t-2xl object-cover'
+          className='h-[144px] w-full cursor-pointer rounded-t-2xl object-cover'
           src={data?.images?.[0] || '/svg/fallback-img.svg'}
           onError={(e) => (e.currentTarget.src = '/svg/fallback-img.svg')}
           alt=''

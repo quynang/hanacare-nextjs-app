@@ -46,61 +46,68 @@ const ChallengeRankingResult: React.FC<ChallengeRankingResultProps> = ({
       <div className='absolute grid h-full w-full grid-cols-3 gap-4'>
         {!isLoading && (
           <>
+
             <div className='mt-[12%]'>
-              <div className='flex  flex-col items-center justify-center'>
-                <img
-                  className='flex h-[96px] w-[96px] rounded-full border-4 border-[#7186A9]'
-                  src={rank2?.avatar}
-                  onError={(e) =>
-                    (e.currentTarget.src = '/svg/fallback-avatar.svg')
-                  }
-                />
-                <div className='mt-2 font-medium'>{rank2?.name}</div>
-              </div>
+              {rank2 &&
+                <div className='flex  flex-col items-center justify-center'>
+                  <img
+                    className='flex md:h-[96px] md:w-[96px] w-[64px]  h-[64px] rounded-full border-4 border-[#7186A9]'
+                    src={rank2?.avatar}
+                    onError={(e) =>
+                      (e.currentTarget.src = '/svg/fallback-avatar.svg')
+                    }
+                  />
+                  <div className='mt-2 font-medium text-center'>{rank2?.name}</div>
+                </div>
+              }
             </div>
             <div>
-              <div className='flex  flex-col items-center justify-center'>
-                <img
-                  className='flex h-[96px] w-[96px] rounded-full border-4 border-[#FFDC62]'
-                  src={rank1?.avatar}
-                  onError={(e) =>
-                    (e.currentTarget.src = '/svg/fallback-avatar.svg')
-                  }
-                />
-                <div className='mt-2 font-medium'>{rank1?.name}</div>
-              </div>
+              {rank1 &&
+                <div className='flex flex-col items-center justify-center'>
+                  <img
+                    className='flex md:h-[96px] md:w-[96px] w-[64px]  h-[64px] rounded-full border-4 border-[#FFDC62]'
+                    src={rank1?.avatar}
+                    onError={(e) =>
+                      (e.currentTarget.src = '/svg/fallback-avatar.svg')
+                    }
+                  />
+                  <div className='mt-2 font-medium text-center'>{rank1?.name}</div>
+                </div>
+              }
             </div>
             <div className='mt-[12%]'>
-              <div className='flex  flex-col items-center justify-center'>
-                <img
-                  className='flex h-[96px] w-[96px] rounded-full border-4 border-[#7186A9]'
-                  src={rank3?.avatar}
-                  onError={(e) =>
-                    (e.currentTarget.src = '/svg/fallback-avatar.svg')
-                  }
-                />
-                <div className='mt-2 font-medium'>{rank3?.name}</div>
-              </div>
+              {rank3 &&
+                <div className='flex  flex-col items-center justify-center'>
+                  <img
+                    className='flex  md:h-[96px] md:w-[96px] w-[64px]  h-[64px] rounded-full border-4 border-[#7186A9]'
+                    src={rank3?.avatar}
+                    onError={(e) =>
+                      (e.currentTarget.src = '/svg/fallback-avatar.svg')
+                    }
+                  />
+                  <div className='mt-2 font-medium  text-center'>{rank3?.name}</div>
+                </div>
+              }
             </div>
           </>
         )}
       </div>
-      {type === 'today' && <img src='/images/today-ranking-block.png'></img>}
-      {type === 'final' && <img src='/images/final-ranking-block.png'></img>}
+      {type === 'today' && <img className='pt-[50px] md:pt-0' src='/images/today-ranking-block.png'></img>}
+      {type === 'final' && <img className='pt-[50px] md:pt-0' src='/images/final-ranking-block.png'></img>}
       <div
         className={twMerge(
-          'absolute bottom-[32px] grid w-full grid-cols-3 gap-4 font-medium',
+          'absolute md:bottom-[7%] bottom-[5%] grid w-full grid-cols-3 gap-4 font-medium',
           type === 'today' ? 'text-primary' : 'text-white'
         )}
       >
         <div className='flex flex-col items-center justify-center'>
-          {rank2?.attribute_value} bước
+          {rank2 ? rank2.attribute_value + " bước" : ""}
         </div>
         <div className='flex  flex-col items-center justify-center'>
-          {rank1?.attribute_value} bước
+          {rank1 ? rank1.attribute_value + " bước" : ""}
         </div>
         <div className='flex  flex-col items-center justify-center'>
-          {rank3?.attribute_value} bước
+          {rank3 ? rank3.attribute_value + " bước" : ""}
         </div>
       </div>
     </div>

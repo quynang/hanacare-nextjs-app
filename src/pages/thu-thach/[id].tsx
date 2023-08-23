@@ -10,6 +10,7 @@ import ChallengeRankingResult from '@/components/challenge/ChallengeRankingResul
 import { twMerge } from 'tailwind-merge';
 import { getChallengeMinestone } from '@/lib/helper';
 import TrophyIcon from '../../assests/icons/trophy.svg';
+import ImageWithSkeleton from '@/components/ImageWithSekeleton';
 
 export default function ChallengeDetail() {
   const router = useRouter();
@@ -56,17 +57,17 @@ export default function ChallengeDetail() {
       <Seo />
       <main>
         <div className='container mx-auto'>
-          <section className='mt-[80px] flex h-[600px]'>
+          <section className='md:mt-[80px] flex '>
             <HanaCarousel>
-              {images.map((img: string) => (
-                <img src={img}></img>
+              {images.map((img: string, index: number) => (
+                <ImageWithSkeleton className='md:h-[600px] w-full' src={img} alt={''} key={index} />
               ))}
             </HanaCarousel>
           </section>
-          <section className='mt-16 flex flex-col items-center justify-center'>
+          <section className='mt-10 md:mt-16 flex flex-col items-center justify-center'>
             <div className='flex gap-6'>
-              {categories.map((c: any) => (
-                <div className='rounded-xl bg-[#00B6FD33] py-[8px] px-[20px]  text-primary'>
+              {categories.map((c: any, index: number) => (
+                <div key={index} className='rounded-xl bg-[#00B6FD33] py-[8px] px-[20px]  text-primary'>
                   {c.name}
                 </div>
               ))}
@@ -141,8 +142,8 @@ export default function ChallengeDetail() {
           <section className='mt-[48px]'>
             <div>
               <h3 className='mb-4 text-[32px] font-bold'>Nhà tài trợ</h3>
-              {sponsors.map((s: any) => (
-                <div className='flex'>
+              {sponsors.map((s: any, index: number) => (
+                <div className='flex' key={index}>
                   <img
                     className='h-[72px] w-[72px] rounded-xl border object-cover'
                     src={s.avatar}
@@ -155,8 +156,8 @@ export default function ChallengeDetail() {
             </div>
             <div className='mt-[40px]'>
               <h3 className='mb-4 text-[32px] font-bold'>Đơn vị tổ chức</h3>
-              {organizes.map((s: any) => (
-                <div className='flex'>
+              {organizes.map((s: any, index: number) => (
+                <div className='flex' key={index}>
                   <img
                     className='h-[72px] w-[72px] rounded-xl border object-cover'
                     src={s.avatar}

@@ -29,6 +29,7 @@
     "react-ga": "^3.3.1",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.7.1",
+    "react-select": "^5.7.4",
     "react-slick": "^0.29.0",
     "swr": "^2.0.3",
     "tailwind-merge": "^1.14.0"
@@ -46,7 +47,6 @@
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "autoprefixer": "^10.4.13",
-    "daisyui": "^3.5.1",
     "eslint": "^8.33.0",
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",

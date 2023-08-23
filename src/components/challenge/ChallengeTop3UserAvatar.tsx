@@ -15,8 +15,9 @@ const ChallengeTop3UserAvatar: React.FC<ChallengeTop3UserAvatarProps> = ({
 
   return (
     <div className='mr-1 flex -space-x-2'>
-      {rankingData.data.map((item: any) => (
+      {rankingData.data.map((item: any, index: number) => (
         <img
+          key={index}
           className='h-6 w-6 rounded-full border-2 border-[#00B6FD] dark:border-gray-800'
           src={item.avatar}
           onError={(e) => (e.currentTarget.src = '/svg/fallback-avatar.svg')}

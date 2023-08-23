@@ -9,17 +9,17 @@ import ChallengeCardList from '@/components/challenge/ChallengeCardList';
 import { useRouter } from 'next/router';
 import { withCSR } from '@/hooks/withCSR';
 import ImageWithSkeleton from '@/components/ImageWithSekeleton';
-import ChallengeCategoriesDropDown from '@/components/challenge/ChallengeCategoriesDropdown';
+import ChallengeCategorySelect from '@/components/challenge/ChallengeCategorySelect';
 
 export default function ChallengeList() {
   const router = useRouter();
   const { categoryId } = router.query;
 
-  const onCategoryChange = (item: any) => {
-    if (item?.id) {
+  const onCategoryChange = (id: number) => {
+    if (id) {
       const currentPathname = router.pathname;
       const queryParams = {
-        categoryId: item.id,
+        categoryId: id,
       };
 
       router.push(
@@ -40,7 +40,7 @@ export default function ChallengeList() {
       <Seo />
       <main>
         <div className='container mx-auto'>
-          <div className='mb-2 md:mb-10 md:pt-16'>
+          <div className='mb-10 md:pt-16'>
             <HanaCarousel>
               <ImageWithSkeleton
                 className='md:h-[600px]'
@@ -60,23 +60,27 @@ export default function ChallengeList() {
               onClick={onCategoryChange}
             />
           </section>
-          <section className=' pt-6 md:hidden md:pt-16 xl:pt-16'>
-            <ChallengeCategoriesDropDown onClick={onCategoryChange} />
+          <section className='mt-[40] md:hidden w-[120px]'>
+            <ChallengeCategorySelect activeCategory={parseInt(categoryId as string)}
+              onClick={onCategoryChange} />
           </section>
-          <section className='pt-8'>
+          <section>
             <ChallengeCardList
+              className='pt-8'
               type='upcomming'
               categoryId={categoryId as string}
             />
           </section>
-          <section className='pt-8'>
+          <section>
             <ChallengeCardList
+              className='pt-8'
               type='running'
               categoryId={categoryId as string}
             />
           </section>
-          <section className='pt-8'>
+          <section>
             <ChallengeCardList
+              className='pt-8'
               type='finished'
               categoryId={categoryId as string}
             />
@@ -103,7 +107,7 @@ export const getServerSideProps = withCSR(async (ctx) => {
           'challenge/public-challenges',
           {
             limit: 10,
-            time: 2,
+            time: 1,
             ...(categoryId
               ? { category_id: parseInt(categoryId as string) }
               : {}),

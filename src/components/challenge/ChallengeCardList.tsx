@@ -7,6 +7,8 @@ import { BsArrowRight } from 'react-icons/bs';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
 import ChanllengeCardSekeleton from '@/components/sekeletons/ChallengeCardSekeleton';
+import SeeAllCard from '@/components/challenge/SeeAllCard';
+import { useRouter } from 'next/router';
 
 const challegeTypeMapping = {
   upcomming: 2,
@@ -29,6 +31,7 @@ const challengeTypeLinkMapping = {
 type ChallengeCardListProps = {
   type: 'upcomming' | 'running' | 'finished';
   categoryId?: string;
+  className?: string
 };
 
 const SLIDE_TO_SHOW = 4;
@@ -38,6 +41,7 @@ const CHALLENGE_PAGE_SIZE = 10;
 const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
   type,
   categoryId,
+  className = ''
 }) => {
   const { data, isLoading, isFetching } = usePublicChallenges({
     limit: CHALLENGE_PAGE_SIZE,
@@ -47,6 +51,8 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
   const [reachedEnd, setReachedEnd] = useState(false);
   const [reachedStart, setReachedStart] = useState(true);
 
+  const router = useRouter()
+
   const slickConfig = {
     dots: false,
     infinite: false,
@@ -54,34 +60,7 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
     slidesToShow: SLIDE_TO_SHOW,
     slidesToScroll: SLIDE_TO_SCROLL,
     variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
     beforeChange: (current: number, next: number) => {
-      console.log(next);
       if (next === 0) {
         setReachedStart(true);
       } else {
@@ -98,11 +77,13 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
 
   const sliderRef = useRef();
 
+  const hasMore = data?.data?.total > CHALLENGE_PAGE_SIZE;
+
   if (isLoading)
     return (
-      <>
+      <div className={className}>
         <div role='status' className='max-w-sm animate-pulse'>
-          <div className='w-60 md:w-100 mb-8 h-[32px] bg-gray-200 '></div>
+          <div className='w-60 md:w-100 mb-8 rounded-lg h-[32px] bg-gray-200 '></div>
         </div>
         <div className='flex gap-4'>
           <ChanllengeCardSekeleton />
@@ -116,7 +97,7 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
             <ChanllengeCardSekeleton />
           </div>
         </div>
-      </>
+      </div>
     );
 
   if (!isLoading && !data.data?.items?.length) return null;
@@ -130,8 +111,12 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
     //@ts-ignore
     sliderRef.current.slickPrev();
   };
+
+  const onSeeAll = () => {
+    router.push(challengeTypeLinkMapping[type])
+  }
   return (
-    <div className='card-list'>
+    <div className={twMerge('card-list', className)}>
       <div className='mb-8 flex items-center justify-between'>
         <h1 className='text-2xl font-bold'>
           {titleChallengeTypeMapping[type]}
@@ -143,8 +128,9 @@ const ChallengeCardList: React.FC<ChallengeCardListProps> = ({
       {/* @ts-ignore */}
       <Slider ref={sliderRef} {...slickConfig}>
         {(data?.data?.items || []).map((item: any, index: number) => (
-          <ChallengeCard key={index} type={type} data={item} />
+          <ChallengeCard key={index} type={type} data={item} width={312} />
         ))}
+        {hasMore && <SeeAllCard width={312} onSeeAll={onSeeAll} />}
       </Slider>
       {data.data?.items?.length > SLIDE_TO_SHOW && (
         <div className='mt-8 hidden w-full justify-center gap-2 md:flex'>
