@@ -9,12 +9,11 @@ const defaultMeta = {
     'HanaCare chăm sóc sức khỏe và hạnh phúc của mọi người',
 };
 
-export default function Seo() {
+export default function Seo(seoProps?: any) {
   const router = useRouter();
-
   const { data } = useGhostSettings();
 
-  const meta = data?.settings || defaultMeta
+  const meta = seoProps || data?.settings || defaultMeta
 
   return (
     <Head>

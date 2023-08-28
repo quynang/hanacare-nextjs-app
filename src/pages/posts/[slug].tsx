@@ -9,12 +9,9 @@ export default function PostDetail(props: any) {
   const { query } = useRouter();
   const isWebViewMode = query?.is_webview === 'true';
   const seoMeta = {
-    title: post?.title,
-    siteName: 'HanaCare',
-    description: post?.excerpt,
-    type: 'article',
-    robots: 'follow, index',
-    image: post?.feature_image,
+    meta_title: post?.title,
+    meta_description: post?.excerpt,
+    og_image: post?.feature_image,
   };
 
   return (

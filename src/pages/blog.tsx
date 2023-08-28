@@ -30,7 +30,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <Seo title='Hanacare Blog' />
       <main>
         <div className="hero-bg relative">
           <Image src={BlogBanner} className="w-full object-cover h-64 bg-white" alt="Hanacare Blog" />
