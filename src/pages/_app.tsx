@@ -16,7 +16,10 @@ import {
   Hydrate,
   QueryClient,
   QueryClientProvider,
+  dehydrate,
 } from '@tanstack/react-query';
+import { withCSR } from '@/hooks/withCSR';
+import { fetchGhostSetting } from '@/hooks/useGhostSetting';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { query } = useRouter();
@@ -74,5 +77,19 @@ function MyApp({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+export const getServerSideProps = withCSR(async () => {
+  const queryClient = new QueryClient();
+  queryClient.prefetchQuery(
+    ['ghost/settings'],
+    fetchGhostSetting
+  )
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+});
+
 
 export default MyApp;
