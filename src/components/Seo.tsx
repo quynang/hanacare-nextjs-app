@@ -9,7 +9,7 @@ const defaultMeta = {
     'HanaCare chăm sóc sức khỏe và hạnh phúc của mọi người',
 };
 type SeoProps = {
-  metaData: any
+  metaData?: any
 }
 
 export default function Seo({ metaData }: SeoProps) {
