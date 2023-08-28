@@ -16,7 +16,7 @@ export default function PostDetail(props: any) {
 
   return (
     <>
-      <Seo {...seoMeta} />
+      <Seo metaData={seoMeta}/>
       <div className='hero-area  relative pt-10 pb-10 xl:pt-20 xl:pb-20 '>
         <div className='container mx-auto'>
           <div className='hero-box-3 relative grid grid-cols-1 gap-8 text-left lg:grid-cols-12'>
