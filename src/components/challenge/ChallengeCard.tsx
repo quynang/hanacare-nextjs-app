@@ -43,6 +43,10 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
   const cardWidthClass = width ? `w-[${width}px]` : 'w-full'
   if (!data) return null;
 
+  const handleOpenApp = () => {
+    window.open(`com.lhd-software.hanacare://Challenge?id=${id}`)
+  }
+
 
   return (
     <div className={`m-x-4 flex h-[406px] ${cardWidthClass} flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]`}>
@@ -108,6 +112,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
         {type === 'finished' && (
           <button
             type='button'
+            onClick={handleOpenApp}
             className='mr-2 mb-2 rounded-lg border border-gray-800 px-5 py-2.5 text-center text-sm font-medium text-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 '
           >
             Chi tiết
@@ -116,6 +121,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
         {type === 'upcomming' && (
           <button
             type='button'
+            onClick={handleOpenApp}
             className='dark:focus:ring-[#75C905]/55 mr-2 mb-2 inline-flex w-full items-center justify-center rounded-lg bg-[#75C905] px-5 py-2.5   text-center text-white hover:bg-[#75C905]/90 focus:outline-none focus:ring-4 focus:ring-[#75C905]/50'
           >
             <Flag className='mr-2' />
@@ -125,6 +131,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
         {type === 'running' && (
           <button
             type='button'
+            onClick={handleOpenApp}
             className='dark:focus:ring-[#75C905]/55 mr-2 mb-2 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5   text-center text-white hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50'
           >
             <Flag className='mr-2' />
