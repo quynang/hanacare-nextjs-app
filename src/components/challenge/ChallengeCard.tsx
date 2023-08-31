@@ -4,8 +4,9 @@ import dayjs from 'dayjs';
 import { DATE_FORMAT_DISPLAY } from '@/constant';
 import ChallengeTop3UserAvatar from '@/components/challenge/ChallengeTop3UserAvatar';
 import { useMemo } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { TARGET_UNIT_LABEL_MAPPING } from '@/constant/challenge';
+import GoalIcon from "@/assests/icons/goal-icon.svg"
 
 type ChallengeProps = {
   type?: 'upcomming' | 'running' | 'finished';
@@ -98,6 +99,12 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
             )}
           </div>
         </div>
+        {data.targets &&
+          <div className='font-medium items-center text-xs flex gap-2'>
+            <GoalIcon className="text-[20px]" />
+            <div>{data.targets[0].attribute_value} {TARGET_UNIT_LABEL_MAPPING[data.targets[0].attribute_unit]}</div>
+          </div>
+        }
         {type === 'finished' && (
           <button
             type='button'
