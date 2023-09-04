@@ -59,7 +59,7 @@ export default function RunnigChallengeList() {
           </div>
           <section className='pt-16 xl:pt-16'>
             <div className='mb-8 flex items-center justify-between'>
-              <h1 className='text-2xl font-bold'>CHƯƠNG TRÌNH SẮP DIỄN RA</h1>
+              <h1 className='text-2xl font-bold'>CHƯƠNG TRÌNH ĐANG DIỄN RA</h1>
             </div>
             <div className='hidden md:block'>
               <ChallengeCategories

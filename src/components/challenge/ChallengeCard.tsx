@@ -7,6 +7,9 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { TARGET_UNIT_LABEL_MAPPING } from '@/constant/challenge';
 import GoalIcon from "@/assests/icons/goal-icon.svg"
+import { isMobile } from 'react-device-detect';
+import { useRouter } from 'next/router';
+
 
 type ChallengeProps = {
   type?: 'upcomming' | 'running' | 'finished';
@@ -21,6 +24,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
 }) => {
 
   const { id } = data;
+  const router = useRouter()
 
   const period = `${dayjs(data.start_time).format(
     DATE_FORMAT_DISPLAY
@@ -47,6 +51,14 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
     window.open(`com.lhd-software.hanacare://Challenge?id=${id}`)
   }
 
+  const onClickDetail = () => {
+    if (isMobile) {
+      window.open(`com.lhd-software.hanacare://Challenge?id=${id}`)
+    } else {
+
+      router.push(`/thu-thach/${id}`)
+    }
+  }
 
   return (
     <div className={`m-x-4 flex h-[406px] ${cardWidthClass} flex-col rounded-2xl bg-white shadow-[0px_3px_24px_0px_#00000014]`}>
@@ -112,7 +124,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
         {type === 'finished' && (
           <button
             type='button'
-            onClick={handleOpenApp}
+            onClick={onClickDetail}
             className='mr-2 mb-2 rounded-lg border border-gray-800 px-5 py-2.5 text-center text-sm font-medium text-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 '
           >
             Chi tiết
@@ -135,7 +147,7 @@ const ChallengeCard: React.FC<ChallengeProps> = ({
             className='dark:focus:ring-[#75C905]/55 mr-2 mb-2 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5   text-center text-white hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50'
           >
             <Flag className='mr-2' />
-            Đăng ký ngay
+            Tham gia ngay
           </button>
         )}
       </div>
