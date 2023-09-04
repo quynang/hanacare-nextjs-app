@@ -60,6 +60,7 @@ const HanaSelect = (props: any) => (
   <Select
     closeMenuOnSelect={false}
     hideSelectedOptions={false}
+    isSearchable={false}
     unstyled
     styles={{
       input: (base) => ({
