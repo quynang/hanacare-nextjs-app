@@ -96,8 +96,8 @@ export default function ChallengeDetail() {
               </div>
             </div>
             {challegeMinestone === 'finished' && (
-              <div className='mt-4 flex items-center'>
-                <TrophyIcon />
+              <div className='mt-4 max-w-[936px] flex items-start w-full'>
+                <TrophyIcon className="text-[50px] md:text-[24px]" />
                 <span className='ml-2'>
                   Kết quả sẽ được thông báo đến các thành viên thắng giải trong
                   vòng 5-7 ngày làm việc kể từ ngày kết thúc sự kiện.
