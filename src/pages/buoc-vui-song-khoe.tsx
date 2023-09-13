@@ -51,7 +51,7 @@ export default function BuocVuiSongKhoe() {
 
   return (
     <>
-      <Seo title='Bước vui, Sống khỏe' />
+      <Seo metaData={{ meta_title: 'Bước vui, Sống khỏe' }} />
       <div className='bg-[#011C3A]'>
         <section className='relative'>
           <img
