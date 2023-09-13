@@ -9,17 +9,14 @@ export default function PostDetail(props: any) {
   const { query } = useRouter();
   const isWebViewMode = query?.is_webview === 'true';
   const seoMeta = {
-    title: post?.title,
-    siteName: 'HanaCare',
-    description: post?.excerpt,
-    type: 'article',
-    robots: 'follow, index',
-    image: post?.feature_image,
+    meta_title: post?.title,
+    meta_description: post?.excerpt,
+    og_image: post?.feature_image,
   };
 
   return (
     <>
-      <Seo {...seoMeta} />
+      <Seo metaData={seoMeta}/>
       <div className='hero-area  relative pt-10 pb-10 xl:pt-20 xl:pb-20 '>
         <div className='container mx-auto'>
           <div className='hero-box-3 relative grid grid-cols-1 gap-8 text-left lg:grid-cols-12'>

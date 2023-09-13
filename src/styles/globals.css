@@ -69,3 +69,26 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+.slick-track {
+  margin-left: 0px !important;
+}
+.slick-dots li {
+  margin: 0px !important;
+}
+
+.card-list .slick-slide {
+  margin: 0 10px;
+}
+/* the parent */
+.card-list .slick-list {
+    margin: 0 -10px;
+}
+
+.slick-track {
+  display: flex !important;
+}
+  
+.slick-slide {
+  height: inherit !important;
+}

@@ -1,72 +1,34 @@
+import { useGhostSettings } from '@/hooks/useGhostSetting';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'HanaCare - Ứng dụng rèn luyện và theo dõi sức khoẻ',
-  siteName: 'HanaCare',
-  description:
-    'Bằng việc xây dựng các thói quen lành mạnh, cộng đồng sức khỏe, cộng đồng chuyên gia, HanaCare mang đến cho bạn trạng thái wellbeing - khỏe mạnh và hạnh phúc trọn vẹn',
-  url: 'https://hanacare.vn',
-  type: 'website',
-  robots: 'follow, index',
-  image: '',
+  meta_title: 'Hanacare App',
+  meta_description:
+    'HanaCare chăm sóc sức khỏe và hạnh phúc của mọi người',
 };
-
 type SeoProps = {
-  date?: string;
-  templateTitle?: string;
-} & Partial<typeof defaultMeta>;
+  metaData?: any
+}
 
-export default function Seo(props: SeoProps) {
+export default function Seo({ metaData }: SeoProps) {
   const router = useRouter();
-  const meta = {
-    ...defaultMeta,
-    ...props,
-  };
-  meta['title'] = props.templateTitle
-    ? `${props.templateTitle} | ${meta.siteName}`
-    : meta.title;
+  const { data } = useGhostSettings();
+
+  const meta = metaData || data?.settings || defaultMeta
 
   return (
     <Head>
-      <title>{meta.title}</title>
-      <meta name='robots' content={meta.robots} />
-      <meta content={meta.description} name='description' />
-      <meta property='og:url' content={`${meta.url}${router.asPath}`} />
-      <link rel='canonical' href={`${meta.url}${router.asPath}`} />
-      <meta property='og:type' content={meta.type} />
-      <meta property='og:site_name' content={meta.siteName} />
-      <meta property='og:description' content={meta.description} />
-      <meta property='og:title' content={meta.title} />
-      <meta name='image' property='og:image' content={meta.image} />
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:title' content={meta.title} />
-      <meta name='twitter:description' content={meta.description} />
-      <meta name='twitter:image' content={meta.image} />
-      {meta.date && (
-        <>
-          <meta property='article:published_time' content={meta.date} />
-          <meta
-            name='publish_date'
-            property='og:publish_date'
-            content={meta.date}
-          />
-          <meta
-            name='author'
-            property='article:author'
-            content='Theodorus Clarence'
-          />
-        </>
-      )}
-
-      {/* Favicons */}
+      <title>{meta.meta_title}</title>
+      <meta content={meta.meta_description} name='description' />
+      <link rel='canonical' href={`https://hanacare.vn${router.asPath}`} />
+      <meta property='og:description' content={meta.og_description} />
+      <meta property='og:title' content={meta.og_title} />
+      <meta name='image' property='og:image' content={meta.og_image} />
       {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
       ))}
-      <meta name='msapplication-TileColor' content='#ffffff' />
-      <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
-      <meta name='theme-color' content='#ffffff' />
     </Head>
   );
 }

@@ -1,4 +1,6 @@
 import { AppProps } from 'next/app';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 import '@/styles/common.css';
@@ -10,10 +12,19 @@ const opensans = Open_Sans({ subsets: ['latin'] });
 import { initGTM, logPageView } from '../utils/tracking';
 import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+  dehydrate,
+} from '@tanstack/react-query';
+import { withCSR } from '@/hooks/withCSR';
+import { fetchGhostSetting } from '@/hooks/useGhostSetting';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { query } = useRouter();
   const [isWebview, setIsWebview] = useState(false);
+  const [queryClient] = useState(() => new QueryClient());
 
   useEffect(() => {
     if (query.is_webview === 'true') {
@@ -54,13 +65,31 @@ function MyApp({ Component, pageProps }: AppProps) {
           async
         />
       </Head>
-      <WebviewProvider value={isWebview}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </WebviewProvider>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <WebviewProvider value={isWebview}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </WebviewProvider>
+        </Hydrate>
+      </QueryClientProvider>
     </div>
   );
 }
+
+export const getServerSideProps = withCSR(async () => {
+  const queryClient = new QueryClient();
+  queryClient.prefetchQuery(
+    ['ghost/settings'],
+    fetchGhostSetting
+  )
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+});
+
 
 export default MyApp;
