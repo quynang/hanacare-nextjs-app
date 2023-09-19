@@ -56,13 +56,13 @@ export default function BuocVuiSongKhoe() {
         <section className='relative'>
           <img
             className='hidden lg:block'
-            src={'images/campaign/campaign-banner.webp'}
+            src={'images/campaign/BVSK-2-SocialPost.webp'}
           />
           <img
             className='w-full bg-[#329DFF] lg:hidden'
-            src={'images/campaign/campaign-banner-mobile.webp'}
+            src={'images/campaign/BVSK-2-SocialPost-Mobile.webp'}
           />
-          <div className='hidden lg:block'>
+          {/* <div className='hidden lg:block'>
             <div className='absolute bottom-[11%] left-[8%] flex w-[13%] flex-col'>
               <a
                 href='https://play.google.com/store/apps/details?id=com.hanacare'
@@ -115,7 +115,7 @@ export default function BuocVuiSongKhoe() {
                 <img src='images/campaign/qr-code.png' />
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
         <section className='flex gap-[24px] overflow-auto  bg-[url("/images/campaign/sections-bg.webp")] bg-cover px-6 py-[72px] lg:justify-center lg:px-[140px]'>
           {PAGE_SECTIONS.map((s, index) => (
@@ -137,13 +137,7 @@ export default function BuocVuiSongKhoe() {
             </h1>
             <div className='relative flex justify-center rounded-xl border-2 border-[#329DFF] bg-[#212225] p-[14px] pb-[131px] lg:px-[48px] lg:pt-[48px] lg:pb-[117px]'>
               <div className='max-w-[1000px] text-center text-sm text-white	 lg:text-2xl'>
-                Đi bộ luôn là một hoạt động được khuyến khích tập luyện với mọi
-                lứa tuổi. Việc đi bộ không chỉ giúp nâng cao thể trạng, mà còn
-                cải thiện nhiều về tinh thần. Chính vì vậy, HanaCare đã tạo ra
-                chiến dịch "BƯỚC VUI, SỐNG KHOẺ" với mong muốn có thể kêu gọi
-                cộng đồng tạo dựng một thói quen tốt trong việc đi bộ mỗi ngày,
-                đồng thời trở thành nguồn động lực thúc đẩy với những cá nhân
-                đang mãi chần chừ với bộ môn này.
+                Đi bộ luôn là một hoạt động được khuyến khích tập luyện với mọi lứa tuổi. Việc đi bộ không chỉ giúp nâng cao thể trạng, mà còn cải thiện nhiều về tinh thần. Nhận được nhiều phản hồi tích cực từ "BƯỚC VUI SỐNG KHỎE" mùa đầu tiên, HanaCare tiếp tục hưởng ứng tinh thần sống lành mạnh ở mùa 2 này.
               </div>
               <div className='absolute bottom-0'>
                 <img
@@ -151,7 +145,7 @@ export default function BuocVuiSongKhoe() {
                   src='images/campaign/date-block.webp'
                 />
                 <div className='absolute left-[17%] bottom-[20%] text-[20px] font-bold text-white lg:bottom-[10%] lg:text-[32px]'>
-                  14/08/2023 - 23/08/2023
+                  30/09/2023 - 09/10/2023
                 </div>
               </div>
             </div>
@@ -164,14 +158,6 @@ export default function BuocVuiSongKhoe() {
           <div className='flex flex-wrap justify-center gap-[67px]'>
             <img className='w-[180px]' src='images/campaign/lhd-logo.webp' />
             <img className='w-[180px]' src='images/campaign/fujiwa-logo.webp' />
-            <img
-              className='w-[180px]'
-              src='images/campaign/the-fox-logo.webp'
-            />
-            <img
-              className='w-[180px]'
-              src='images/campaign/miss-minh-uyen.webp'
-            />
           </div>
         </section>
         <section
@@ -270,9 +256,7 @@ export default function BuocVuiSongKhoe() {
                   Mục tiêu:
                 </span>
                 <span className='text-[16px] font-[500] text-white lg:text-[24px]'>
-                  BTC sẽ trao quà cho tất cả người chơi đạt đủ điều kiện chương
-                  trình và có phần thưởng cho TOP 80 với giá trị từ cao xuống
-                  thấp.
+                  BTC sẽ trao quà cho 3 người chơi đạt đủ điều kiện chương trình với số quãng đường cao nhất.
                 </span>
               </div>
             </div>
@@ -280,9 +264,7 @@ export default function BuocVuiSongKhoe() {
               <CupIcon className='mr-4 text-[45px]' />
               <div>
                 <span className='text-[16px]  font-[500] text-white lg:text-[24px]'>
-                  Kết quả xếp hạng là tổng số Km mà các thành viên tích lũy
-                  trong suốt thời gian diễn ra chương trình thông qua cập nhật
-                  của hệ thống.
+                  Kết quả xếp hạng là tổng số Km mà các thành viên tích lũy trong suốt thời gian diễn ra chương trình thông qua cập nhật của hệ thống.
                 </span>
               </div>
             </div>

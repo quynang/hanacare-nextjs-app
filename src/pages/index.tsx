@@ -36,7 +36,7 @@ export default function HomePage() {
           <Link href='/buoc-vui-song-khoe'>
             <img
               className='pt-20 xl:pt-28'
-              src='/images/campaign/buoc-vui-song-khoe.webp'
+              src='/images/campaign/BVSK-2-SocialPost.webp'
             ></img>
           </Link>
           <section className='topics-area pt-20 xl:pt-28'>
