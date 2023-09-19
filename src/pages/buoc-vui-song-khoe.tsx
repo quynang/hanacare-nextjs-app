@@ -49,6 +49,11 @@ export default function BuocVuiSongKhoe() {
     }
   };
 
+  const handleOpenApp = (e: any) => {
+    e.preventDefault()
+    window.open(`com.lhd-software.hanacare://Challenge?id=13`)
+  }
+
   return (
     <>
       <Seo metaData={{ meta_title: 'Bước vui, Sống khỏe' }} />
@@ -187,7 +192,7 @@ export default function BuocVuiSongKhoe() {
             ))}
           </div>
           <a
-            href='http://com.lhd-software.hanacare//Challenge?id=13'
+            onClick={handleOpenApp}
             className='mt-[40px] bg-[#FF823D] px-[24px] py-[16px] text-[24px] font-bold text-white'
           >
             THAM GIA NGAY
