@@ -306,6 +306,24 @@
   grid-column: wide-start/wide-end
 }
 
+.kg-image-card img {
+  margin: auto;
+  display: block !important;
+}
+
+figcaption {
+  padding: 1.5rem 1.5rem 0;
+  text-align: center;
+  color: rgba(0,0,0,.5);
+  font-size: 1.3rem;
+  line-height: 1.4em;
+}
+
+.gh-content :not(.kg-card):not([id])+.kg-card {
+  margin-top: 6vmin;
+  margin-bottom: 0;
+}
+
 .kg-width-full {
   grid-column: full-start/full-end
 }
